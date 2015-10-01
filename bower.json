@@ -1,9 +1,9 @@
 {
   "name": "config",
   "version": "0.0.0",
-  "homepage": "https://github.com/turnervink/sliding-text",
+  "homepage": "https://github.com/singleserveapps/sliding-text-sf-config",
   "authors": [
-    "turnervink <turner.vink@me.com>"
+    "pAvem3nt"
   ],
   "license": "MIT",
   "ignore": [
