@@ -17,19 +17,19 @@ function submitHandler() {
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#sliderWeatherFrequency');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$sliderWeatherFrequency[0].value = localStorage.sliderWeatherFrequency;
+		$weatherFrequencySlider[0].value = localStorage.weatherFrequency;
 	}
 }
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#sliderWeatherFrequency');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -39,7 +39,7 @@ function getAndStoreConfigData() {
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
-	localStorage.sliderWeatherFrequency = options.weatherFrequency;
+	localStorage.weatherFrequency = options.weatherFrequency;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
