@@ -39,7 +39,7 @@ function getAndStoreConfigData() {
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
-	localStorage.sliderWeatherFrequency = options.weatherFrequencySlider;
+	localStorage.sliderWeatherFrequency = options.weatherFrequency;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
