@@ -1,45 +1,49 @@
-function getConfigData() {
-    var backgroundColorPicker = document.getElementById('backgroundColorPicker');
-    var textColorPicker = document.getElementById('textColorPicker');
-    var displayWeather = document.getElementById('displayWeather');
- 
-    var options = {
-      'backgroundColor': backgroundColorPicker.value,
-      'textColor': textColorPicker.value,
-      'displayWeather': displayWeather.checked
-    }
+(function () {
+	loadOptions();
+	submitHandler();
+})();
 
-    // Save for next launch
-    localStorage['backgroundColorPicker'] = options['backgroundColorPicker'];
-    localStorage['textColorPicker'] = options['textColorPicker'];
-    localStorage['displayWeather'] = options['displayWeather'];
+function submitHandler() {
+	var $submitButton = $('#submitButton');
 
-    console.log('Got options: ' + JSON.stringify(options));
-    return options;
-};
+	$submitButton.on('click', function() {
+		console.log('Submit');
 
- var submitButton = document.getElementById('submitButton');
-  submitButton.addEventListener('click', function() {
-    console.log('Submit');
+		var return_to = getQueryParam('return_to', 'pebblejs://close#');
+		document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
+	});
+}
 
-    // Set the return URL depending on the runtime environment
-    var return_to = getQueryParam('return_to', 'pebblejs://close#');
-    document.location = return_to + encodeURIComponent(JSON.stringify(getConfigData()));
-  });
+function loadOptions() {
+	var $backgroundColorPicker = $('#backgroundColorPicker');
+	var $textColorPicker = $('#textColorPicker');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 
-  (function() {
-    var backgroundColorPicker = document.getElementById('backgroundColorPicker');
-    var textColorPicker = document.getElementById('textColorPicker');
-    var displayWeather = document.getElementById('displayWeather');
+	if (localStorage.backgroundColor) {
+		$backgroundColorPicker[0].value = localStorage.backgroundColor;
+		$textColorPicker[0].value = localStorage.textColor;
+		$weatherFrequencySlider.value = localStorage.weatherFrequency;
+	}
+}
 
-    // Load any previously saved configuration, if available
-    if(localStorage['displayWeather']) {
+function getAndStoreConfigData() {
+	var $backgroundColorPicker = $('#backgroundColorPicker');
+	var $textColorPicker = $('#textColorPicker');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 
-      displayWeather.checked = localStorage['displayWeather'];
-      backgroundColorPicker.value = localStorage['backgroundColorPicker'];
-      textColorPicker.value = localStorage['textColorPicker'];
-    }
-  })();
+	var options = {
+		backgroundColor: $backgroundColorPicker.val(),
+		textColor: $textColorPicker.val(),
+		weatherFrequency: $weatherFrequencySlider.val()
+	};
+
+	localStorage.backgroundColor = options.backgroundColor;
+	localStorage.textColor = options.textColor;
+	localStorage.weatherFrequency = options.weatherFrequency;
+
+	console.log('Got options: ' + JSON.stringify(options));
+	return options;
+}
 
 function getQueryParam(variable, defaultValue) {
   var query = location.search.substring(1);
