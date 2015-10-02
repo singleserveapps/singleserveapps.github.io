@@ -1,9 +1,9 @@
 {
   "name": "config",
   "version": "0.0.0",
-  "homepage": "https://github.com/singleserveapps/sliding-text-sf-config",
+  "homepage": "https://github.com/singleserveapps/sliding-text-wd-config",
   "authors": [
-    "pAvem3nt"
+    "alanacheff"
   ],
   "license": "MIT",
   "ignore": [
