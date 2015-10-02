@@ -18,26 +18,7 @@ function getConfigData() {
     return options;
 };
 
-function getAndStoreConfigData() {
-	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $textColorPicker = $('#textColorPicker');
-	var $displayWeather = $('#displayWeather');
-
-	var options = {
-		backgroundColor: $backgroundColorPicker.val(),
-		textColor: $textColorPicker.val(),
-		displayWeather: $displayWeather.val()
-	};
-
-	localStorage.backgroundColor = options.backgroundColor;
-	localStorage.textColor = options.textColor;
-	localStorage.displayWeather = options.displayWeather;
-
-	console.log('Got options: ' + JSON.stringify(options));
-	return options;
-}
-
-  var submitButton = document.getElementById('submitButton');
+ var submitButton = document.getElementById('submitButton');
   submitButton.addEventListener('click', function() {
     console.log('Submit');
 
