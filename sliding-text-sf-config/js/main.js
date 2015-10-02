@@ -22,7 +22,7 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$weatherFrequencySlider.slider.value = localStorage.weatherFrequency;
+		$weatherFrequencySlider.value = localStorage.weatherFrequency;
 	}
 }
 
@@ -34,7 +34,7 @@ function getAndStoreConfigData() {
 	var options = {
 		'backgroundColor': $backgroundColorPicker.val(),
 		'textColor': $textColorPicker.val(),
-		'weatherFrequency': $weatherFrequencySlider.slider.val()
+		'weatherFrequency': $weatherFrequencySlider.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
