@@ -7,6 +7,7 @@ function getConfigData() {
       'backgroundColorPicker': backgroundColorPicker.value,
       'textColorPicker': textColorPicker.value,
       'displayWeather': displayWeather.checked
+    }
 
     // Save for next launch
     localStorage['backgroundColorPicker'] = options['backgroundColorPicker'];
