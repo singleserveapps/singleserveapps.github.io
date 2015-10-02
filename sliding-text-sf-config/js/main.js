@@ -32,10 +32,9 @@ function getAndStoreConfigData() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 
 	var options = {
-		'weatherFrequency2': $weatherFrequencySlider.val(),
-		'backgroundColor2': $backgroundColorPicker.val(),
-		'textColor2': $textColorPicker.val()
-
+		'backgroundColor': $backgroundColorPicker.val(),
+		'textColor': $textColorPicker.val(),
+		'weatherFrequency': $weatherFrequencySlider.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
