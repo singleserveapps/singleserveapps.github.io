@@ -4,8 +4,8 @@ function getConfigData() {
     var displayWeather = document.getElementById('displayWeather');
  
     var options = {
-      'backgroundColorPicker': backgroundColorPicker.value,
-      'textColorPicker': textColorPicker.value,
+      'backgroundColor': backgroundColorPicker.value,
+      'textColor': textColorPicker.value,
       'displayWeather': displayWeather.checked
     }
 
