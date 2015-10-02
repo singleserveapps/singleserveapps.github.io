@@ -17,7 +17,7 @@ function submitHandler() {
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $weatherFrequencySlider = $('#weatherFrequencySliderText');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -29,7 +29,7 @@ function loadOptions() {
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $weatherFrequencySlider = $('#weatherFrequencySliderText');
 
 	var options = {
 		'backgroundColor': $backgroundColorPicker.val(),
