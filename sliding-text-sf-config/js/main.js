@@ -37,7 +37,7 @@ function getAndStoreConfigData() {
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
-		weatherFrequency: $weatherFrequencySlider.val()
+		weatherFrequency: $weatherFrequencySlider.val(),
 		useCelsius: $useCelsius[0].checked
 	};
 
