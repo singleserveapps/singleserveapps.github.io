@@ -54,7 +54,7 @@ function getAndStoreConfigData() {
     // Load any previously saved configuration, if available
     if(localStorage['displayWeather']) {
 
-      displayWeather.checked = JSON.parse(localStorage['displayWeather']);
+      displayWeather.checked = localStorage['displayWeather'];
       backgroundColorPicker.value = localStorage['backgroundColorPicker'];
       textColorPicker.value = localStorage['textColorPicker'];
     }
