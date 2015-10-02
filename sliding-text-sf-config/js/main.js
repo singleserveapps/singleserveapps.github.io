@@ -5,7 +5,7 @@ function getConfigData() {
  
     var options = {
       'backgroundColorPicker': backgroundColorPicker.value,
-      'textColorPicker': textColorPicker.value
+      'textColorPicker': textColorPicker.value,
       'displayWeather': displayWeather.checked
 
     // Save for next launch
