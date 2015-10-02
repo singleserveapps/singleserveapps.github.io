@@ -22,7 +22,7 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$displayWeather[0].value = localStorage.displayWeather;
+		$displayWeather.value = localStorage.displayWeather;
 	}
 }
 
