@@ -17,29 +17,29 @@ function submitHandler() {
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $displayWeather = $('#displayWeather');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$weatherFrequencySlider.value = localStorage.weatherFrequency;
+		$displayWeather[0].value = localStorage.displayWeather;
 	}
 }
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $displayWeather = $('#displayWeather');
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
-		weatherFrequency: $weatherFrequencySlider.val()
+		displayWeather: $displayWeather.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
-	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.displayWeather = options.displayWeather;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
