@@ -9,11 +9,7 @@
 <body>
 	<div class='item-container'>
 		<div class='item-container-header'>Watchface color options</div>
-	
 		<div class='item-container-content'>
-			<p>
-		        	Pebble Time & Pebble Time Steel only - Choose the background and text colors for the watchface.
-		        </p>
 			<label class='item'>
 				Background Color
 				<input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
@@ -24,31 +20,31 @@
 				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
 			</label>
 		</div>
-
-		<div class='item-container-header'>
-	        	Pebble & Pebble Steel only - Check to invert black and white colors.
-		 </div>
+		<div class='item-container-footer'>
+		        Pebble Time & Pebble Time Steel only - Choose the background and text colors for the watchface.
+		</div>
 		<div class='item-container-content'>
 			<label class='item'>
 				Invert Colors
 				<input id='invertColors' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
+		<div class='item-container-footer'>
+	        	Pebble & Pebble Steel only - Check to invert black and white colors.
+		 </div>
 	</div>	
 	
 	<div class='item-container'>
-		<div class='item-container-header'>Weather options</div>
-		
-		<div class='item-container-header'>
-	        	Check to display temperature in degrees Celsius. Uncheck to display in degrees Fahrenheit.
-		 </div>
+		<div class='item-container-header'>Weather options</div>		
 		<div class='item-container-content'>
 			<label class='item'>
 				Use Celsius
 				<input id='useCelsius' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
-
+		<div class='item-container-footer'>
+	        	Check to display temperature in degrees Celsius. Uncheck to display in degrees Fahrenheit.
+		 </div>
 		 <div class='item-container-content'>
     			<label class='item'>
     				Weather update frequency
@@ -64,18 +60,17 @@
 	</div>
 	
 	    	<div class='item-container'>
-		<div class='item-container-header'>Time option</div>	
-		
-		<div class='item-container-header'>
-	        	Check to diplay o' prefix for single-digit minutes. For example, two o'two or three o'seven.
-                Option is applied with next minute change.
-		 </div>		
+		<div class='item-container-header'>Time option</div>		
 		<div class='item-container-content'>
 			<label class='item'>
 				Display o'- prefix
 				<input id='displayPrefix' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
+		<div class='item-container-footer'>
+	        	Check to diplay o' prefix for single-digit minutes. For example, two o'two or three o'seven.
+                Option is applied with next minute change.
+		 </div>
 	</div>
 	
 	<div class='item-container'>
