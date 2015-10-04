@@ -19,12 +19,14 @@ function loadOptions() {
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
+	var $displayPrefix = $('#displayPrefix');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.value = localStorage.weatherFrequency;
-		$useCelsius[0].checked = localStorage.useCelsius === 'true';		
+		$useCelsius[0].checked = localStorage.useCelsius === 'true';
+		$displayPrefix[0].checked = localStorage.displayPrefix === 'true';		
 	}
 }
 
@@ -32,19 +34,22 @@ function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $useCelsius = $('#useCelsius');	
+	var $useCelsius = $('#useCelsius');
+	var $displayPrefix = $('#displayPrefix');
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
-		useCelsius: $useCelsius[0].checked
+		useCelsius: $useCelsius[0].checked,
+        	displayPrefix: $displayPrefix[0].checked
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useCelsius = options.useCelsius;
+	localStorage.displayPrefix = options.displayPrefix;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
