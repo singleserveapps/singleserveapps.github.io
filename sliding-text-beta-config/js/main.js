@@ -20,13 +20,15 @@ function loadOptions() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
+	var $invertColors = $('#invertColors');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.value = localStorage.weatherFrequency;
 		$useCelsius[0].checked = localStorage.useCelsius === 'true';
-		$displayPrefix[0].checked = localStorage.displayPrefix === 'true';		
+		$displayPrefix[0].checked = localStorage.displayPrefix === 'true';
+		$invertColors[0].checked = localStorage.invertColors === 'true';
 	}
 }
 
@@ -36,13 +38,15 @@ function getAndStoreConfigData() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
+	var $invertColors = $('#invertColors');
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useCelsius: $useCelsius[0].checked,
-        displayPrefix: $displayPrefix[0].checked
+        	displayPrefix: $displayPrefix[0].checked,
+        	invertColors: $invertColors[0].checked
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -50,6 +54,7 @@ function getAndStoreConfigData() {
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
+	localStorage.invertColors = options.invertColors;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
