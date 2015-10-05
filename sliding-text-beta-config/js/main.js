@@ -28,9 +28,9 @@ function loadOptions() {
 		$weatherFrequencySlider.value = localStorage.weatherFrequency;
 
 		if (localStorage.useCelsius == "0")
-			$useCelsius[0].checked = true;
+			$useCelsius[0].checked = "true";
 		else
-			$useCelsius[0].checked = false;
+			$useCelsius[0].checked = "false";
 
 		//$useCelsius[0].checked = localStorage.useCelsius;
 		$displayPrefix[0].checked = localStorage.displayPrefix;
