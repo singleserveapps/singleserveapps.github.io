@@ -21,9 +21,18 @@
 			</label>
 		</div>
 		<div class='item-container-footer'>
-		        Choose the background and text colors for the watchface.
-		</div>			
-	</div>
+		        Pebble Time & Pebble Time Steel only - Choose the background and text colors for the watchface.
+		</div>
+		<div class='item-container-content'>
+			<label class='item'>
+				Invert Colors
+				<input id='invertColors' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+	        	Pebble & Pebble Steel only - Check to invert black and white colors.
+		 </div>
+	</div>	
 	
 	<div class='item-container'>
 		<div class='item-container-header'>Weather options</div>		
@@ -38,7 +47,7 @@
 		 </div>
 		 <div class='item-container-content'>
     			<label class='item'>
-    				Weather update frequency (minutes)
+    				Weather update frequency
       				<input type='range' class='item-slider' id='weatherFrequencySlider' name='weatherFrequencySlider' min='15' max='120' step='15' value='30'>
       			<div class='item-input-wrapper item-slider-text'>
         			<input type='text' class='item-input' name='weatherFrequencySlider' value='30' readonly>
@@ -46,11 +55,11 @@
     			</label>
   		</div>
   		<div class='item-container-footer'>
-	        	Select weather information update frequency.
+	        	Select weather information update frequency (minutes).
 		 </div>	
 	</div>
-
-    <div class='item-container'>
+	
+	    	<div class='item-container'>
 		<div class='item-container-header'>Time option</div>		
 		<div class='item-container-content'>
 			<label class='item'>
@@ -62,8 +71,8 @@
 	        	Check to diplay o' prefix for single-digit minutes. For example, two o'two or three o'seven.
                 Option is applied with next minute change.
 		 </div>
-	</div>	
-
+	</div>
+	
 	<div class='item-container'>
 		<div class='button-container'>
 			<input id='submitButton' type='button' class='item-button' value='Save'>
