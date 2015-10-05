@@ -26,7 +26,12 @@ function loadOptions() {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.value = localStorage.weatherFrequency;
-		$useCelsius[0].checked = localStorage.useCelsius === 'true';
+		
+		$useCelsius[0].checked = 'true';
+		if (localStorage.useCelsius == 0)
+			$useCelsius[0].checked = 'false';
+		
+		//$useCelsius[0].checked = localStorage.useCelsius === 'true';
 		$displayPrefix[0].checked = localStorage.displayPrefix === 'true';
 		$invertColors[0].checked = localStorage.invertColors === 'true';
 	}
