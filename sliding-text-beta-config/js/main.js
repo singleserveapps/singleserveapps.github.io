@@ -46,7 +46,7 @@ function getAndStoreConfigData() {
         if ($useCelsius[0].checked)
             use_Celsius = 1;
 	
-	if (displayPrefix: $displayPrefix[0].checked)
+	if ($displayPrefix[0].checked)
 	    display_Prefix = 1;
 	
         if ($invertColors[0].checked)
