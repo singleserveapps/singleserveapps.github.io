@@ -25,7 +25,7 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$weatherFrequencySlider.value = localStorage.weatherFrequency;
+		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
