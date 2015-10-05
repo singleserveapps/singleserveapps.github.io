@@ -37,16 +37,28 @@ function getAndStoreConfigData() {
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
-	var $displayPrefix = $('#displayPrefix');
-	var $invertColors = $('#invertColors');
+        var $displayPrefix = $('#displayPrefix');
+        var $invertColors = $('#invertColors');
+        var use_Celsius = 0;
+        var display_Prefix = 0;
+        var invert_Colors = 0;
 	
+        if ($useCelsius[0].checked)
+            use_Celsius = 1;
+	
+	if (displayPrefix: $displayPrefix[0].checked)
+	    display_Prefix = 1;
+	
+        if ($invertColors[0].checked)
+            invert_Colors = 1;
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
-		useCelsius: $useCelsius[0].checked,
-        	displayPrefix: $displayPrefix[0].checked,
-        	invertColors: $invertColors[0].checked
+		useCelsius: use_Celsius,
+        	displayPrefix: display_Prefix,
+        	invertColors: invert_Colors
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
