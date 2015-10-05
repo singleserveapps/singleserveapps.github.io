@@ -28,13 +28,23 @@ function loadOptions() {
 		$weatherFrequencySlider.value = localStorage.weatherFrequency;
 
 		if (localStorage.useCelsius == "0")
-			$useCelsius[0].checked = true;
-		else
 			$useCelsius[0].checked = false;
+		else
+			$useCelsius[0].checked = true;
+			
+		if (localStorage.displayPrefix == "0")
+			$displayPrefix[0].checked = false;
+		else
+			$displayPrefix[0].checked = true;
+		
+		if (localStorage.invertColors == "0")
+			$invertColors[0].checked = false;
+		else
+			$invertColors[0].checked = true;
 
 		//$useCelsius[0].checked = localStorage.useCelsius;
-		$displayPrefix[0].checked = localStorage.displayPrefix;
-		$invertColors[0].checked = localStorage.invertColors;
+		//$displayPrefix[0].checked = localStorage.displayPrefix;
+		//$invertColors[0].checked = localStorage.invertColors;
 		//$invertColors[0].checked = localStorage.invertColors === 'true';
 		
 	}
