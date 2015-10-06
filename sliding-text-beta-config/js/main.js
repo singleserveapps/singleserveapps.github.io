@@ -21,6 +21,7 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $invertColors = $('#invertColors');
+	
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -39,11 +40,6 @@ function loadOptions() {
 		if (localStorage.invertColors == "1")
 			$invertColors[0].checked = true;
 
-		//$useCelsius[0].checked = localStorage.useCelsius;
-		//$displayPrefix[0].checked = localStorage.displayPrefix;
-		//$invertColors[0].checked = localStorage.invertColors;
-		//$invertColors[0].checked = localStorage.invertColors === 'true';
-		
 	}
 }
 
