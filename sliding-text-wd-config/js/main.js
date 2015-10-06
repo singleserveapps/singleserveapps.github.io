@@ -25,10 +25,25 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$weatherFrequencySlider.value = localStorage.weatherFrequency;
-		$useCelsius[0].checked = localStorage.useCelsius === 'true';
-		$displayPrefix[0].checked = localStorage.displayPrefix === 'true';
-		$invertColors[0].checked = localStorage.invertColors === 'true';
+		$weatherFrequencySlider.val(localStorage.weatherFrequency);
+
+		$useCelsius[0].checked = false;
+		if (localStorage.useCelsius == "1")
+			$useCelsius[0].checked = true;
+			
+		$displayPrefix[0].checked = false;
+		if (localStorage.displayPrefix == "1")
+			$displayPrefix[0].checked = true;
+		
+		$invertColors[0].checked = false;
+		if (localStorage.invertColors == "1")
+			$invertColors[0].checked = true;
+
+		//$useCelsius[0].checked = localStorage.useCelsius;
+		//$displayPrefix[0].checked = localStorage.displayPrefix;
+		//$invertColors[0].checked = localStorage.invertColors;
+		//$invertColors[0].checked = localStorage.invertColors === 'true';
+		
 	}
 }
 
@@ -37,16 +52,28 @@ function getAndStoreConfigData() {
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
-	var $displayPrefix = $('#displayPrefix');
-	var $invertColors = $('#invertColors');
+        var $displayPrefix = $('#displayPrefix');
+        var $invertColors = $('#invertColors');
+        var use_Celsius = 0;
+        var display_Prefix = 0;
+        var invert_Colors = 0;
 	
+        if ($useCelsius[0].checked)
+            use_Celsius = 1;
+	
+	if ($displayPrefix[0].checked)
+	    display_Prefix = 1;
+	
+        if ($invertColors[0].checked)
+            invert_Colors = 1;
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
-		useCelsius: $useCelsius[0].checked,
-        	displayPrefix: $displayPrefix[0].checked,
-        	invertColors: $invertColors[0].checked
+		useCelsius: use_Celsius,
+        	displayPrefix: display_Prefix,
+        	invertColors: invert_Colors
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
