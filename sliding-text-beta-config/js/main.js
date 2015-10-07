@@ -28,7 +28,7 @@ function loadOptions() {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$weatherDateAlignment.text = localStorage.weatherDateAlignment;
+		$weatherDateAlignment.value = localStorage.weatherDateAlignment;
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
@@ -74,7 +74,7 @@ function getAndStoreConfigData() {
 		useCelsius: use_Celsius,
         	displayPrefix: display_Prefix,
         	invertColors: invert_Colors,
-        	weatherDateAlignment: $weatherDateAlignment.attrib()
+        	weatherDateAlignment: $weatherDateAlignment.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
