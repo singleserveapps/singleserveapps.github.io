@@ -21,14 +21,15 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $invertColors = $('#invertColors');
-	var $weatherDateAlignment = $('#weatherDateAlignment');
+	//var $weatherDateAlignment = $('#weatherDateAlignment');
+	var weatherDateAlignment = document.getElementById("weatherDateAlignment");
 	
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$weatherDateAlignment.value = localStorage.weatherDateAlignment;
+		$weatherDateAlignment[0].value = localStorage.weatherDateAlignment;
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
