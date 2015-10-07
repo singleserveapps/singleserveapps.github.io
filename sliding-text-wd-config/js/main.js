@@ -21,11 +21,17 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $invertColors = $('#invertColors');
+	var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
+		$weatherDateAlignment.val("1");
+		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
+		$hourMinutesAlignment.val("0");
+		$hourMinutesAlignment.val(localStorage.hourMinutesAlignment);
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
@@ -39,11 +45,6 @@ function loadOptions() {
 		if (localStorage.invertColors == "1")
 			$invertColors[0].checked = true;
 
-		//$useCelsius[0].checked = localStorage.useCelsius;
-		//$displayPrefix[0].checked = localStorage.displayPrefix;
-		//$invertColors[0].checked = localStorage.invertColors;
-		//$invertColors[0].checked = localStorage.invertColors === 'true';
-		
 	}
 }
 
@@ -54,6 +55,10 @@ function getAndStoreConfigData() {
 	var $useCelsius = $('#useCelsius');
         var $displayPrefix = $('#displayPrefix');
         var $invertColors = $('#invertColors');
+        var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $hourMinutesAlignment = $('#hourMinutesAlignment');
+        
         var use_Celsius = 0;
         var display_Prefix = 0;
         var invert_Colors = 0;
@@ -73,7 +78,9 @@ function getAndStoreConfigData() {
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useCelsius: use_Celsius,
         	displayPrefix: display_Prefix,
-        	invertColors: invert_Colors
+        	invertColors: invert_Colors,
+        	weatherDateAlignment: $weatherDateAlignment.val(),
+        	hourMinutesAlignment: $hourMinutesAlignment.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -82,6 +89,8 @@ function getAndStoreConfigData() {
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
 	localStorage.invertColors = options.invertColors;
+	localStorage.weatherDateAlignment = options.weatherDateAlignment;
+	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
