@@ -22,15 +22,14 @@ function loadOptions() {
 	var $displayPrefix = $('#displayPrefix');
 	var $invertColors = $('#invertColors');
 	var $weatherDateAlignment = $('#weatherDateAlignment');
-	//var weatherDateAlignment = document.getElementById("weatherDateAlignment");
-	
+	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		//$weatherDateAlignment[0].value = localStorage.weatherDateAlignment;
-		weatherDateAlignment.Text = "Right";
+		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
+		$hourMinutesAlignment.val(localStorage.hourMinutesAlignment);
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
@@ -55,6 +54,8 @@ function getAndStoreConfigData() {
         var $displayPrefix = $('#displayPrefix');
         var $invertColors = $('#invertColors');
         var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $hourMinutesAlignment = $('#hourMinutesAlignment');
         
         var use_Celsius = 0;
         var display_Prefix = 0;
@@ -76,7 +77,8 @@ function getAndStoreConfigData() {
 		useCelsius: use_Celsius,
         	displayPrefix: display_Prefix,
         	invertColors: invert_Colors,
-        	weatherDateAlignment: $weatherDateAlignment.val()
+        	weatherDateAlignment: $weatherDateAlignment.val(),
+        	hourMinutesAlignment: $hourMinutesAlignment.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -86,6 +88,7 @@ function getAndStoreConfigData() {
 	localStorage.displayPrefix = options.displayPrefix;
 	localStorage.invertColors = options.invertColors;
 	localStorage.weatherDateAlignment = options.weatherDateAlignment;
+	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
