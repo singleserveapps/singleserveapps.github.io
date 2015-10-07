@@ -21,8 +21,8 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $invertColors = $('#invertColors');
-	//var $weatherDateAlignment = $('#weatherDateAlignment');
-	var weatherDateAlignment = document.getElementById("weatherDateAlignment");
+	var $weatherDateAlignment = $('#weatherDateAlignment');
+	//var weatherDateAlignment = document.getElementById("weatherDateAlignment");
 	
 
 	if (localStorage.backgroundColor) {
