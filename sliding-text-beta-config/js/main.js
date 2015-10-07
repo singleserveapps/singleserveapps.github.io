@@ -30,7 +30,7 @@ function loadOptions() {
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		//$weatherDateAlignment[0].value = localStorage.weatherDateAlignment;
-		weatherDateAlignment = "Center";
+		weatherDateAlignment = "Right";
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
