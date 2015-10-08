@@ -12,7 +12,7 @@
 		<div class="item-container-content">
 		<label class="item">
       			Weather / Date Lines
-      			<select id="wthrDtAlign" dir='rtl' class="item-select">
+      			<select id="weatherDateAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" value=0>Left</option>
         		<option class="item-select-option" selected value=1>Center</option>
         		<option class="item-select-option" value=2>Right</option>
@@ -20,7 +20,7 @@
       		</label>
       		<label class="item">
             		Hour / Minutes Lines
-      			<select id="hrMinAlign" dir='rtl' class="item-select">
+      			<select id="hourMinutesAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" selected value=0>Left</option>
         		<option class="item-select-option" value=1>Center</option>
         		<option class="item-select-option" value=2>Right</option>
@@ -38,12 +38,12 @@
 		<div class='item-container-content'>
 			<label class='item'>
 				Background Color
-				<input id='bckgrdClr' type='text' class='item-color item-color-sunny' value='#000000'>
+				<input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
 			</label>
 			
 			<label class='item'>
 				Text Color
-				<input id='txtClr' type='text' class='item-color item-color-sunny' value='0xffffff'>
+				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
@@ -52,7 +52,7 @@
 		<div class='item-container-content'>
 			<label class='item'>
 				Invert Colors
-				<input id='iClrs' type='checkbox' class='item-checkbox'>
+				<input id='invertColors' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
@@ -74,9 +74,9 @@
 		 <div class='item-container-content'>
     			<label class='item'>
     				Weather update frequency
-      				<input type='range' class='item-slider' id='wthrFreq' name='wthrFreq' min='15' max='120' step='15' value='30'>
+      				<input type='range' class='item-slider' id='weatherFrequencySlider' name='weatherFrequencySlider' min='15' max='120' step='15' value='30'>
       			<div class='item-input-wrapper item-slider-text'>
-        			<input type='text' class='item-input' name='wthrFreq' readonly>
+        			<input type='text' class='item-input' name='weatherFrequencySlider' readonly>
       			</div>
     			</label>
   		</div>
@@ -90,7 +90,7 @@
 		<div class='item-container-content'>
 			<label class='item'>
 				Display "o" for 1-9
-				<input id='oPrefix' type='checkbox' class='item-checkbox'>
+				<input id='displayPrefix' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
