@@ -15,48 +15,49 @@ function submitHandler() {
 }
 
 function loadOptions() {
-	var $bckgrdClr = $('#bckgrdClr');
-	var $txtClr = $('#txtClr');
-	var $wthrFreq = $('#wthrFreq');
+	var $backgroundColorPicker = $('#backgroundColorPicker');
+	var $textColorPicker = $('#textColorPicker');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
-	var $oPrefix = $('#oPrefix');
-	var $iClrs = $('#iClrs');
-	var $wthrDtAlign = $('#wthrDtAlign');
-	var $hrMinAlign = $('#hrMinAlign');
+	var $displayPrefix = $('#displayPrefix');
+	var $invertColors = $('#invertColors');
+	var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 
-	if (localStorage.bckgrdClr) {
-		$bckgrdClr[0].value = localStorage.bckgrdClr;
-		$txtClr[0].value = localStorage.txtClr;
-		$wthrFreq.val(localStorage.wthrFreq);
-		$wthrDtAlign.val("1");
-		$wthrDtAlign.val(localStorage.wthrDtAlign);
-		$hrMinAlign.val("0");
-		$hrMinAlign.val(localStorage.hrMinAlign);
+	if (localStorage.backgroundColor) {
+		$backgroundColorPicker[0].value = localStorage.backgroundColor;
+		$textColorPicker[0].value = localStorage.textColor;
+		$weatherFrequencySlider.val(localStorage.weatherFrequency);
+		$weatherDateAlignment.val("1");
+		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
+		$hourMinutesAlignment.val("0");
+		$hourMinutesAlignment.val(localStorage.hourMinutesAlignment);
 
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
 			
-		$oPrefix[0].checked = false;
-		if (localStorage.oPrefix == "1")
-			$oPrefix[0].checked = true;
+		$displayPrefix[0].checked = false;
+		if (localStorage.displayPrefix == "1")
+			$displayPrefix[0].checked = true;
 		
-		$iClrs[0].checked = false;
-		if (localStorage.iClrs == "1")
-			$iClrs[0].checked = true;
+		$invertColors[0].checked = false;
+		if (localStorage.invertColors == "1")
+			$invertColors[0].checked = true;
 
 	}
 }
 
 function getAndStoreConfigData() {
-	var $bckgrdClr = $('#bckgrdClr');
-	var $txtClr = $('#txtClr');
-	var $wthrFreq = $('#wthrFreq');
+	var $backgroundColorPicker = $('#backgroundColorPicker');
+	var $textColorPicker = $('#textColorPicker');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
-    	var $oPrefix = $('#oPrefix');
-    	var $iClrs = $('#iClrs');
-    	var $wthrDtAlign = $('#wthrDtAlign');
-	var $hrMinAlign = $('#hrMinAlign');
+        var $displayPrefix = $('#displayPrefix');
+        var $invertColors = $('#invertColors');
+        var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $hourMinutesAlignment = $('#hourMinutesAlignment');
         
         var use_Celsius = 0;
         var display_Prefix = 0;
@@ -65,31 +66,31 @@ function getAndStoreConfigData() {
         if ($useCelsius[0].checked)
             use_Celsius = 1;
 	
-	if ($oPrefix[0].checked)
+	if ($displayPrefix[0].checked)
 	    display_Prefix = 1;
 	
-        if ($iClrs[0].checked)
+        if ($invertColors[0].checked)
             invert_Colors = 1;
 
 	var options = {
-		bckgrdClr: $bckgrdClr.val(),
-		txtClr: $txtClr.val(),
-		wthrFreq: $wthrFreq.val(),
+		backgroundColor: $backgroundColorPicker.val(),
+		textColor: $textColorPicker.val(),
+		weatherFrequency: $weatherFrequencySlider.val(),
 		useCelsius: use_Celsius,
-        	oPrefix: display_Prefix,
-        	iClrs: invert_Colors,
-        	wthrDtAlign: $wthrDtAlign.val(),
-        	hrMinAlign: $hrMinAlign.val()
+        	displayPrefix: display_Prefix,
+        	invertColors: invert_Colors,
+        	weatherDateAlignment: $weatherDateAlignment.val(),
+        	hourMinutesAlignment: $hourMinutesAlignment.val()
 	};
 
-	localStorage.bckgrdClr = options.bckgrdClr;
-	localStorage.txtClr = options.txtClr;
-	localStorage.wthrFreq = options.wthrFreq;
+	localStorage.backgroundColor = options.backgroundColor;
+	localStorage.textColor = options.textColor;
+	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useCelsius = options.useCelsius;
-	localStorage.oPrefix = options.oPrefix;
-	localStorage.iClrs = options.iClrs;
-	localStorage.wthrDtAlign = options.wthrDtAlign;
-	localStorage.hrMinAlign = options.hrMinAlign;
+	localStorage.displayPrefix = options.displayPrefix;
+	localStorage.invertColors = options.invertColors;
+	localStorage.weatherDateAlignment = options.weatherDateAlignment;
+	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
