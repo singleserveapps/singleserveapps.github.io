@@ -3,15 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel='stylesheet' type='text/css' href='/sliding-text-beta-config/bower_components/pebble-slate/dist/css/slate.min.css'>
-	<link rel='stylesheet' type='text/css' href='/sliding-text-beta-config/css/style.css'>
+	<link rel='stylesheet' type='text/css' href='/sliding-text-wd-config/bower_components/pebble-slate/dist/css/slate.min.css'>
+	<link rel='stylesheet' type='text/css' href='/sliding-text-wd-config/css/style.css'>
 </head>
 <body>
 	<div class="item-container">
   		<div class="item-container-header">Watchface alignment options</div>
 		<div class="item-container-content">
 		<label class="item">
-      			Weather/Date
+      			Weather / Date Lines
       			<select id="weatherDateAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" value=0>Left</option>
         		<option class="item-select-option" selected value=1>Center</option>
@@ -19,7 +19,7 @@
       			</select>
       		</label>
       		<label class="item">
-            		Hour/Minutes
+            		Hour / Minutes Lines
       			<select id="hourMinutesAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" selected value=0>Left</option>
         		<option class="item-select-option" value=1>Center</option>
@@ -89,12 +89,12 @@
 		<div class='item-container-header'>Time option</div>		
 		<div class='item-container-content'>
 			<label class='item'>
-				Display o'- prefix
+				Display "o" for 1-9
 				<input id='displayPrefix' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
-	        	Check to diplay o' prefix for single-digit minutes. For example, two o'two or three o'seven.
+	        	Check to diplay "o" for single-digit minutes. For example, two o two or three o seven.
 		 </div>
 	</div>
 	
@@ -107,7 +107,7 @@
     		Note: Some options apply with next minute change.
     	</footer>
 
-	<script src='/sliding-text-beta-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
-	<script src='/sliding-text-beta-config/js/main.js'></script>
+	<script src='/sliding-text-wd-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
+	<script src='/sliding-text-wd-config/js/main.js'></script>
 </body>
 </html>
