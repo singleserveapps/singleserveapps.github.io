@@ -27,7 +27,7 @@ function loadOptions() {
 	if (localStorage.bckgrdClr) {
 		$bckgrdClr[0].value = localStorage.bckgrdClr;
 		$txtClr[0].value = localStorage.txtClr;
-		$wthrFreq.val(localStorage.weatherFrequency);
+		$wthrFreq.val(localStorage.wthrFreq);
 		$wthrDtAlign.val("1");
 		$wthrDtAlign.val(localStorage.wthrDtAlign);
 		$hrMinAlign.val("0");
@@ -74,7 +74,7 @@ function getAndStoreConfigData() {
 	var options = {
 		bckgrdClr: $bckgrdClr.val(),
 		txtClr: $txtClr.val(),
-		weatherFrequency: $wthrFreq.val(),
+		wthrFreq: $wthrFreq.val(),
 		useCelsius: use_Celsius,
         	oPrefix: display_Prefix,
         	iClrs: invert_Colors,
