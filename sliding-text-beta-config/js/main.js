@@ -84,7 +84,7 @@ function getAndStoreConfigData() {
 
 	localStorage.bckgrdClr = options.bckgrdClr;
 	localStorage.txtClr = options.txtClr;
-	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.wthrFreq = options.wthrFreq;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.oPrefix = options.oPrefix;
 	localStorage.iClrs = options.iClrs;
