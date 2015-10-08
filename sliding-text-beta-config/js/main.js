@@ -53,10 +53,9 @@ function getAndStoreConfigData() {
 	var $txtClr = $('#txtClr');
 	var $wthrFreq = $('#wthrFreq');
 	var $useCelsius = $('#useCelsius');
-    var $oPrefix = $('#oPrefix');
-    var $iClrs = $('#iClrs');
-    var $wthrDtAlign = $('#wthrDtAlign');
-	var $wthrDtAlign = $('#wthrDtAlign');
+    	var $oPrefix = $('#oPrefix');
+    	var $iClrs = $('#iClrs');
+    	var $wthrDtAlign = $('#wthrDtAlign');
 	var $hrMinAlign = $('#hrMinAlign');
         
         var use_Celsius = 0;
