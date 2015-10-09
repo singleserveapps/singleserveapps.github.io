@@ -20,7 +20,6 @@ function loadOptions() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
-	var $invertColors = $('#invertColors');
 	var $weatherDateAlignment = $('#weatherDateAlignment');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 
@@ -40,11 +39,6 @@ function loadOptions() {
 		$displayPrefix[0].checked = false;
 		if (localStorage.displayPrefix == "1")
 			$displayPrefix[0].checked = true;
-		
-		$invertColors[0].checked = false;
-		if (localStorage.invertColors == "1")
-			$invertColors[0].checked = true;
-
 	}
 }
 
@@ -54,8 +48,6 @@ function getAndStoreConfigData() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useCelsius = $('#useCelsius');
         var $displayPrefix = $('#displayPrefix');
-        var $invertColors = $('#invertColors');
-        var $weatherDateAlignment = $('#weatherDateAlignment');
 	var $weatherDateAlignment = $('#weatherDateAlignment');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
         
@@ -68,9 +60,6 @@ function getAndStoreConfigData() {
 	
 	if ($displayPrefix[0].checked)
 	    display_Prefix = 1;
-	
-        if ($invertColors[0].checked)
-            invert_Colors = 1;
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -78,7 +67,6 @@ function getAndStoreConfigData() {
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useCelsius: use_Celsius,
         	displayPrefix: display_Prefix,
-        	invertColors: invert_Colors,
         	weatherDateAlignment: $weatherDateAlignment.val(),
         	hourMinutesAlignment: $hourMinutesAlignment.val()
 	};
@@ -88,7 +76,6 @@ function getAndStoreConfigData() {
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
-	localStorage.invertColors = options.invertColors;
 	localStorage.weatherDateAlignment = options.weatherDateAlignment;
 	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
 
