@@ -17,25 +17,18 @@ function submitHandler() {
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
-	var $weatherDateAlignment = $('#weatherDateAlignment');
+	var $dateAlignment = $('#dateAlignment');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$weatherDateAlignment.val("1");
-		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
+		$dateAlignment.val("1");
+		$dateAlignment.val(localStorage.dateAlignment);
 		$hourMinutesAlignment.val("0");
 		$hourMinutesAlignment.val(localStorage.hourMinutesAlignment);
 
-		$useCelsius[0].checked = false;
-		if (localStorage.useCelsius == "1")
-			$useCelsius[0].checked = true;
-			
 		$displayPrefix[0].checked = false;
 		if (localStorage.displayPrefix == "1")
 			$displayPrefix[0].checked = true;
@@ -45,18 +38,12 @@ function loadOptions() {
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $useCelsius = $('#useCelsius');
-        var $displayPrefix = $('#displayPrefix');
-	var $weatherDateAlignment = $('#weatherDateAlignment');
+    var $displayPrefix = $('#displayPrefix');
+	var $dateAlignment = $('#dateAlignment');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
-        
-        var use_Celsius = 0;
-        var display_Prefix = 0;
-        var invert_Colors = 0;
-	
-        if ($useCelsius[0].checked)
-            use_Celsius = 1;
+
+	var display_Prefix = 0;
+    var invert_Colors = 0;
 	
 	if ($displayPrefix[0].checked)
 	    display_Prefix = 1;
@@ -64,19 +51,15 @@ function getAndStoreConfigData() {
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
-		weatherFrequency: $weatherFrequencySlider.val(),
-		useCelsius: use_Celsius,
-        	displayPrefix: display_Prefix,
-        	weatherDateAlignment: $weatherDateAlignment.val(),
-        	hourMinutesAlignment: $hourMinutesAlignment.val()
+        displayPrefix: display_Prefix,
+        dateAlignment: $dateAlignment.val(),
+        hourMinutesAlignment: $hourMinutesAlignment.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
-	localStorage.weatherFrequency = options.weatherFrequency;
-	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
-	localStorage.weatherDateAlignment = options.weatherDateAlignment;
+	localStorage.dateAlignment = options.dateAlignment;
 	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
 
 	console.log('Got options: ' + JSON.stringify(options));
