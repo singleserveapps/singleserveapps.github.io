@@ -7,12 +7,31 @@
 	<link rel='stylesheet' type='text/css' href='/sliding-text-d-config/css/style.css'>
 </head>
 <body>
+
+	<div class='item-container'>
+		<div class='item-container-header'>Watchface color options</div>
+		<div class='item-container-content'>
+			<label class='item'>
+				Background Color
+				<input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
+			</label>
+			
+			<label class='item'>
+				Text Color
+				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+		        Choose the background and text colors for the watchface.
+		</div>
+	</div>	
+
 	<div class="item-container">
   		<div class="item-container-header">Watchface alignment options</div>
 		<div class="item-container-content">
 		<label class="item">
       			Date Line
-      			<select id="DateAlignment" dir='rtl' class="item-select">
+      			<select id="dateAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" value=0>Left</option>
         		<option class="item-select-option" selected value=1>Center</option>
         		<option class="item-select-option" value=2>Right</option>
@@ -31,25 +50,7 @@
 		<div class='item-container-footer'>
 		        Select alignment for date & time display lines.
 		</div>
-	</div>		
-	
-	<div class='item-container'>
-		<div class='item-container-header'>Watchface color options</div>
-		<div class='item-container-content'>
-			<label class='item'>
-				Background Color
-				<input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
-			</label>
-			
-			<label class='item'>
-				Text Color
-				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
-			</label>
-		</div>
-		<div class='item-container-footer'>
-		        Choose the background and text colors for the watchface.
-		</div>
-	</div>	
+	</div>
 	
 	<div class='item-container'>
 		<div class='item-container-header'>Time option</div>		
