@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel='stylesheet' type='text/css' href='/sliding-time-wd-config/bower_components/pebble-slate/dist/css/slate.min.css'>
-	<link rel='stylesheet' type='text/css' href='/sliding-time-wd-config/css/style.css'>
+	<link rel='stylesheet' type='text/css' href='/sliding-time-beta-config/bower_components/pebble-slate/dist/css/slate.min.css'>
+	<link rel='stylesheet' type='text/css' href='/sliding-time-beta-config/css/style.css'>
 </head>
 <body>
 	<div class="item-container">
@@ -77,8 +77,8 @@
 		 </div>	
 	</div>
 	
-	    	<div class='item-container'>
-		<div class='item-container-header'>Time option</div>		
+	    <div class='item-container'>
+		<div class='item-container-header'>Display options</div>		
 		<div class='item-container-content'>
 			<label class='item'>
 				Display "o" for 1-9
@@ -86,8 +86,28 @@
 			</label>
 		</div>
 		<div class='item-container-footer'>
-	        	Check to diplay "o" for single-digit minutes. For example, two o two or three o seven.
+	        	Check to diplay "o" for single-digit minutes. For example, two o two or three o seven. Relaunch watchface to apply display option.
 		 </div>
+
+        <div class='item-container-content'>
+            <label class='item'>
+                Use <strong>bold</strong> font for minute lines
+                <input id='hourMinutesReadability' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to diplay minute lines using a bold font. Relaunch watchface to apply display option.
+        </div>
+
+        <div class='item-container-content'>
+             <label class='item'>
+                Use larger font for weather & date lines
+                <input id='weatherDateReadability' type='checkbox' class='item-checkbox'>
+             </label>
+          </div>
+          <div class='item-container-footer'>
+              Check to diplay weather & date lines using a larger font size. Relaunch watchface to apply display option.
+         </div>
 	</div>
 	
 	<div class='item-container'>
@@ -95,11 +115,8 @@
 			<input id='submitButton' type='button' class='item-button' value='Save'>
 		</div>
 	</div>
-	<footer>
-    		Note: Some options apply with next minute change.
-    	</footer>
 
-	<script src='/sliding-time-wd-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
-	<script src='/sliding-time-wd-config/js/main.js'></script>
+	<script src='/sliding-time-beta-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
+	<script src='/sliding-time-beta-config/js/main.js'></script>
 </body>
 </html>
