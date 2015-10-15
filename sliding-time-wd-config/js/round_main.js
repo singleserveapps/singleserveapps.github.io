@@ -89,6 +89,7 @@ function getAndStoreConfigData() {
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useCelsius: use_Celsius,
         displayPrefix: display_Prefix,
+        weatherDateAlignment: 1,
         hourMinutesAlignment: $hourMinutesAlignment.val(),
 		hourMinutesReadability: hourminutes_readability,
 		weatherDateReadability: weatherdate_readability
