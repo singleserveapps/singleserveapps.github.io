@@ -80,7 +80,7 @@ function getAndStoreConfigData() {
 		var hourminutes_readability = 0;
 		var weatherdate_readability = 0;
 	
-		if ($unitsSetting[1].checked)
+		if ($unitsSetting[0].checked)
 			units_Setting = 1;
 	
         if ($useCelsius[0].checked)
