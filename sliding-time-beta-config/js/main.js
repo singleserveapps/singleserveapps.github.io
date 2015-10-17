@@ -29,7 +29,7 @@ function loadOptions() {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$weatherFrequencySlider.text = localStorage.weatherFrequency;
+		$weatherFrequencySlider.text = $weatherFrequencySlider.val();
 		$weatherDateAlignment.val("1");
 		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
 		$hourMinutesAlignment.val("0");
