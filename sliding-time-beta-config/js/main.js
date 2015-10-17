@@ -20,7 +20,7 @@ $(function(){
 
 $(function(){
 
-	var currentValue = $('#weatherFrequencySliderText');
+	var currentValue = $('#weatherFrequencySlider');
 
 	$('#weatherFrequencySlider').change(function(){
 	    currentValue.html(this.value);
