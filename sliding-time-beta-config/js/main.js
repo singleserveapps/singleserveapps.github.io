@@ -24,6 +24,11 @@ function loadOptions() {
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 	var $hourMinutesReadability = $('#hourMinutesReadability');
 	var $weatherDateReadability = $('#weatherDateReadability');
+	
+	$('#weatherFrequencySlider').on('change', function () {
+    		var v = $(this).val();
+    		$('#weatherFrequencySlider').html(v);
+	});
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
