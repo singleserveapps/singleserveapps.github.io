@@ -3,36 +3,6 @@
 	submitHandler();
 })();
 
-$(function(){
-
-	var currentValue = $('#currentValue');
-
-	$('#defaultSlider').change(function(){
-	    currentValue.html(this.value);
-	});
-
-	// Trigger the event on load, so
-	// the value field is populated:
-
-	$('#defaultSlider').change();
-
-});
-
-$(function(){
-
-	var currentValue = $('#weatherFrequencySlider');
-
-	$('#weatherFrequencySlider').change(function(){
-	    currentValue.html(this.value);
-	});
-
-	// Trigger the event on load, so
-	// the value field is populated:
-
-	$('#weatherFrequencySlider').change();
-
-});
-
 function submitHandler() {
 	var $submitButton = $('#submitButton');
 
@@ -48,25 +18,17 @@ function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $weatherFrequencySliderText = $('#weatherFrequencySliderText');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $weatherDateAlignment = $('#weatherDateAlignment');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 	var $hourMinutesReadability = $('#hourMinutesReadability');
 	var $weatherDateReadability = $('#weatherDateReadability');
-	
-	$('#weatherFrequencySlider').on('change', function () {
-    		var v = $(this).val();
-    		$('#weatherFrequencySliderText').html(v);
-	});
-
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$weatherFrequencySliderText.text = $weatherFrequencySlider.val();
 		$weatherDateAlignment.val("1");
 		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
 		$hourMinutesAlignment.val("0");
