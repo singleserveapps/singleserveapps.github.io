@@ -1,6 +1,5 @@
 (function () {
 	loadOptions();
-	$('#weatherFrequencySlider').html($('#weatherFrequencySlider').val())
 	submitHandler();
 })();
 
@@ -28,14 +27,15 @@ function loadOptions() {
 	
 	$('#weatherFrequencySlider').on('change', function () {
     		var v = $(this).val();
-    		$('#weatherFrequencySlider').html(v);
+    		$('#weatherFrequencySliderText').html(v);
 	});
+
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$weatherFrequencySlider.text = $weatherFrequencySlider.val();
+		$weatherFrequencySliderText.text = $weatherFrequencySlider.val();
 		$weatherDateAlignment.val("1");
 		$weatherDateAlignment.val(localStorage.weatherDateAlignment);
 		$hourMinutesAlignment.val("0");
