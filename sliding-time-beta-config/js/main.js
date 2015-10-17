@@ -18,6 +18,7 @@ function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $weatherFrequencySliderText = $('#weatherFrequencySliderText');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $weatherDateAlignment = $('#weatherDateAlignment');
