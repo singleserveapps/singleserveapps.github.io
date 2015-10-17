@@ -101,7 +101,7 @@ function getAndStoreConfigData() {
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
-	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.weatherFrequency = 30;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
 	localStorage.weatherDateAlignment = options.weatherDateAlignment;
