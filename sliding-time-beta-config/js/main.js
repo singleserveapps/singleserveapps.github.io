@@ -29,7 +29,7 @@ $(function(){
 	// Trigger the event on load, so
 	// the value field is populated:
 
-	$('#weatherFrequencySliderText').change();
+	$('#weatherFrequencySlider').change();
 
 });
 
