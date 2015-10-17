@@ -18,6 +18,21 @@ $(function(){
 
 });
 
+$(function(){
+
+	var currentValue = $('#weatherFrequencySliderText');
+
+	$('#weatherFrequencySlider').change(function(){
+	    currentValue.html(this.value);
+	});
+
+	// Trigger the event on load, so
+	// the value field is populated:
+
+	$('#weatherFrequencySliderText').change();
+
+});
+
 function submitHandler() {
 	var $submitButton = $('#submitButton');
 
