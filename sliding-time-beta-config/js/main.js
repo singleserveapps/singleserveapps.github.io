@@ -1,5 +1,6 @@
 (function () {
 	loadOptions();
+	$('#weatherFrequencySlider').html($('#weatherFrequencySlider').val())
 	submitHandler();
 })();
 
