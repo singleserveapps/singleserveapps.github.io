@@ -81,7 +81,7 @@ function getAndStoreConfigData() {
 		var weatherdate_readability = 0;
 	
 	if ($shakeforLoHi[0].checked)
-		shakeforLoHi = 1;
+		shake_for_LoHi = 1;
 
         if ($useCelsius[0].checked)
             use_Celsius = 1;
