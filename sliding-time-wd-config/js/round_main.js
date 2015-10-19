@@ -18,6 +18,7 @@ function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
@@ -35,6 +36,9 @@ function loadOptions() {
 		$weatherDateReadability.val("0");
 		$weatherDateReadability.val(localStorage.weatherDateReadability);
 
+		$shakeforLoHi[0].checked = false;
+		if (localStorage.shakeforLoHi == "1")
+			$shakeforLoHi[0].checked = true;
 		
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
@@ -58,18 +62,22 @@ function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 	var $hourMinutesReadability = $('#hourMinutesReadability');
 	var $weatherDateReadability = $('#weatherDateReadability');
         
+		var shake_for_LoHi = 0;
         var use_Celsius = 0;
         var display_Prefix = 0;
         var invert_Colors = 0;
 		var hourminutes_readability = 0;
 		var weatherdate_readability = 0;
 	
+	if ($shakeforLoHi[0].checked)
+		shake_for_LoHi = 1;
         if ($useCelsius[0].checked)
             use_Celsius = 1;
 	
@@ -87,6 +95,7 @@ function getAndStoreConfigData() {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
+		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
         displayPrefix: display_Prefix,
         weatherDateAlignment: 1,
@@ -98,6 +107,7 @@ function getAndStoreConfigData() {
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
 	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
