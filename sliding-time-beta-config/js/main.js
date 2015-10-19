@@ -18,7 +18,7 @@ function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $shakeforLoHi = $('#shakeforLoHi');
+	var $shakeforLoHi = $('#shkeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
 	var $weatherDateAlignment = $('#weatherDateAlignment');
@@ -82,7 +82,7 @@ function getAndStoreConfigData() {
 	
 	if ($shakeforLoHi[0].checked)
 		shakeforLoHi = 1;
-	
+
         if ($useCelsius[0].checked)
             use_Celsius = 1;
 	
@@ -111,7 +111,7 @@ function getAndStoreConfigData() {
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
-	localStorage.weatherFrequency = 30;
+	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
