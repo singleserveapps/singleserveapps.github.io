@@ -22,6 +22,7 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 	var $displayDate = $('#displayDate');
 	var $displayDigitalTime = $('#displayDigitalTime');
+	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -31,6 +32,9 @@ function loadOptions() {
 		$displayDate.val(localStorage.displayDate);
 		$displayDigitalTime.val("0");
 		$displayDigitalTime.val(localStorage.displayDigitalTime);
+		$weatherDateDTimeReadability.val("0");
+		$weatherDateDTimeReadability.val(localStorage.weatherDateDTimeReadability);
+
 
 		$shakeforLoHi[0].checked = false;
 		if (localStorage.shakeforLoHi == "1")
@@ -47,6 +51,10 @@ function loadOptions() {
 		$displayDigitalTime[0].checked = false;
 		if (localStorage.displayDigitalTime == "1")
 			$displayDigitalTime[0].checked = true;
+	
+		$weatherDateDTimeReadability[0].checked = false;
+		if (localStorage.weatherDateDTimeReadability == "1")
+			$weatherDateDTimeReadability[0].checked = true;
 	}
 }
 
@@ -58,12 +66,14 @@ function getAndStoreConfigData() {
 	var $useCelsius = $('#useCelsius');
 	var $displayDate = $('#displayDate');
 	var $displayDigitalTime = $('#displayDigitalTime');
+	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
         
         var shake_for_LoHi = 0;
         var use_Celsius = 0;
         var invert_Colors = 0;
 		var displayDate = 0;
 		var displayDigitalTime = 0;
+		var weatherdatedtime_readability = 0;
 	
 	if ($shakeforLoHi[0].checked)
 		shake_for_LoHi = 1;
@@ -77,6 +87,8 @@ function getAndStoreConfigData() {
 		if ($displayDigitalTime[0].checked)
 			displayDigitalTime = 1;
 		
+		if ($weatherDateDTimeReadability[0].checked)
+			weatherdatedtime_readability = 1;
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -85,7 +97,8 @@ function getAndStoreConfigData() {
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
 		displayDate: displayDate,
-		displayDigitalTime: displayDigitalTime
+		displayDigitalTime: displayDigitalTime,
+		weatherDateDTimeReadability: weatherdatedtime_readability
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -95,6 +108,7 @@ function getAndStoreConfigData() {
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayDate = options.displayDate;
 	localStorage.displayDigitalTime = options.displayDigitalTime;
+	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
