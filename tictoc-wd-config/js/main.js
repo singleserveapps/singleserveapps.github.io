@@ -39,10 +39,6 @@ function loadOptions() {
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
-			
-		$displayPrefix[0].checked = false;
-		if (localStorage.displayPrefix == "1")
-			$displayPrefix[0].checked = true;
 		
 		$displayDate[0].checked = false;
 		if (localStorage.displayDate == "1")
@@ -88,9 +84,6 @@ function getAndStoreConfigData() {
 		weatherFrequency: $weatherFrequencySlider.val(),
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
-        displayPrefix: display_Prefix,
-        weatherDateAlignment: $weatherDateAlignment.val(),
-        hourMinutesAlignment: $hourMinutesAlignment.val(),
 		displayDate: displayDate,
 		displayDigitalTime: displayDigitalTime
 	};
