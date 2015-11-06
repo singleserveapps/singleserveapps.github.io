@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel='stylesheet' type='text/css' href='/tictoc-wd-config/bower_components/pebble-slate/dist/css/slate.min.css'>
+	<link rel='stylesheet' type='text/css' href='/tictoc-wd-config/css/style.css'>
+</head>
+<body>
+	<div class="item-container">
+  		<div class="item-container-header">Watchface alignment options</div>
+		<div class="item-container-content">
+		<label class="item">
+      			Weather / Date Lines
+      			<select id="weatherDateAlignment" dir='rtl' class="item-select">
+        		<option class="item-select-option" value=0>Left</option>
+        		<option class="item-select-option" selected value=1>Center</option>
+        		<option class="item-select-option" value=2>Right</option>
+      			</select>
+      		</label>
+      		<label class="item">
+            		Hour / Minutes Lines
+      			<select id="hourMinutesAlignment" dir='rtl' class="item-select">
+        		<option class="item-select-option" selected value=0>Left</option>
+        		<option class="item-select-option" value=1>Center</option>
+        		<option class="item-select-option" value=2>Right</option>
+      			</select>
+    		</label>
+  		</div>
+		</div>
+		<div class='item-container-footer'>
+		        Select alignment for weather/date & time display lines.
+		</div>
+	</div>		
+	
+	<div class='item-container'>
+		<div class='item-container-header'>Watchface color options</div>
+		<div class='item-container-content'>
+			<label class='item'>
+				Background Color
+				<input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
+			</label>
+			
+			<label class='item'>
+				Text Color
+				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+		        Choose the background and text colors for the watchface. 
+		        (For Pebble and Pebble Steel, select from black & white colors only. Black is default for background color and white is default for text color.)
+		</div>
+	</div>	
+	
+	<div class='item-container'>
+		<div class='item-container-header'>Weather options <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple_retina.png" width="134" height="29"/> </a>
+		</div>
+		<div class='item-container-content'>
+			<label class='item'>
+				Shake for Lo/Hi Temperature
+				<input id='shakeforLoHi' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+	        	Check to enable shake option to show today's lo and hi temperatures. Also displays last weather update time on date line.
+		 </div>
+		<div class='item-container-content'>
+			<label class='item'>
+				Use Celsius
+				<input id='useCelsius' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+	        	Check to display temperature in degrees Celsius. Uncheck to display in degrees Fahrenheit.
+		 </div>
+		 <div class='item-container-content'>
+    			<label class='item'>
+    				Weather update frequency
+      				<input type='range' class='item-slider' id='weatherFrequencySlider' name='weatherFrequencySlider' min='15' max='120' step='15' value='30'>
+      			<div class='item-input-wrapper item-slider-text'>
+        			<input type='text' class='item-input' name='weatherFrequencySlider' readonly>
+      			</div>
+    			</label>
+  		</div>
+  		<div class='item-container-footer'>
+	        	Select weather information update frequency via GPS (minutes). Note: Change the weather frequency to force a weather update.
+		 </div>	
+	</div>
+	
+	    <div class='item-container'>
+		<div class='item-container-header'>Display options</div>		
+		<div class='item-container-content'>
+			<label class='item'>
+				Display "o" for 1-9
+				<input id='displayPrefix' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+	        	Check to diplay "o" for single-digit minutes. For example, two o two or three o seven. Relaunch watchface to apply display option.
+		 </div>
+
+        <div class='item-container-content'>
+            <label class='item'>
+                Use <strong>bold</strong> font for minute lines
+                <input id='hourMinutesReadability' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to diplay minute lines using a bold font. Relaunch watchface to apply display option.
+        </div>
+
+        <div class='item-container-content'>
+             <label class='item'>
+                Use larger font for weather & date lines
+                <input id='weatherDateReadability' type='checkbox' class='item-checkbox'>
+             </label>
+          </div>
+          <div class='item-container-footer'>
+              Check to diplay weather & date lines using a larger font size. Relaunch watchface to apply display option.
+         </div>
+	</div>
+	
+	<div class='item-container'>
+		<div class='button-container'>
+			<input id='submitButton' type='button' class='item-button' value='Save'>
+		</div>
+	</div>
+
+	<script src='/tictoc-wd-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
+	<script src='/tictoc-wd-config/js/main.js'></script>
+</body>
+</html>
