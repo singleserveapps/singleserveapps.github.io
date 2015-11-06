@@ -20,21 +20,17 @@ function loadOptions() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
-	var $displayPrefix = $('#displayPrefix');
-	var $hourMinutesAlignment = $('#hourMinutesAlignment');
-	var $hourMinutesReadability = $('#hourMinutesReadability');
-	var $weatherDateReadability = $('#weatherDateReadability');
+	var $displayDate = $('#displayDate');
+	var $displayDigitalTime = $('#displayDigitalTime');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$hourMinutesAlignment.val("0");
-		$hourMinutesAlignment.val(localStorage.hourMinutesAlignment);
-		$hourMinutesReadability.val("0");
-		$hourMinutesReadability.val(localStorage.hourMinutesReadability);
-		$weatherDateReadability.val("0");
-		$weatherDateReadability.val(localStorage.weatherDateReadability);
+		$displayDate.val("0");
+		$displayDate.val(localStorage.displayDate);
+		$displayDigitalTime.val("0");
+		$displayDigitalTime.val(localStorage.displayDigitalTime);
 
 		$shakeforLoHi[0].checked = false;
 		if (localStorage.shakeforLoHi == "1")
@@ -43,18 +39,14 @@ function loadOptions() {
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
-			
-		$displayPrefix[0].checked = false;
-		if (localStorage.displayPrefix == "1")
-			$displayPrefix[0].checked = true;
 		
-		$hourMinutesReadability[0].checked = false;
-		if (localStorage.hourMinutesReadability == "1")
-			$hourMinutesReadability[0].checked = true;
+		$displayDate[0].checked = false;
+		if (localStorage.displayDate == "1")
+			$displayDate[0].checked = true;
 		
-		$weatherDateReadability[0].checked = false;
-		if (localStorage.weatherDateReadability == "1")
-			$weatherDateReadability[0].checked = true;
+		$displayDigitalTime[0].checked = false;
+		if (localStorage.displayDigitalTime == "1")
+			$displayDigitalTime[0].checked = true;
 	}
 }
 
@@ -64,31 +56,26 @@ function getAndStoreConfigData() {
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
-	var $displayPrefix = $('#displayPrefix');
-	var $hourMinutesAlignment = $('#hourMinutesAlignment');
-	var $hourMinutesReadability = $('#hourMinutesReadability');
-	var $weatherDateReadability = $('#weatherDateReadability');
+	var $displayDate = $('#displayDate');
+	var $displayDigitalTime = $('#displayDigitalTime');
         
-		var shake_for_LoHi = 0;
+        var shake_for_LoHi = 0;
         var use_Celsius = 0;
-        var display_Prefix = 0;
         var invert_Colors = 0;
-		var hourminutes_readability = 0;
-		var weatherdate_readability = 0;
+		var displayDate = 0;
+		var displayDigitalTime = 0;
 	
 	if ($shakeforLoHi[0].checked)
 		shake_for_LoHi = 1;
+
         if ($useCelsius[0].checked)
             use_Celsius = 1;
-	
-		if ($displayPrefix[0].checked)
-			display_Prefix = 1;
 		
-		if ($hourMinutesReadability[0].checked)
-			hourminutes_readability = 1;
+		if ($displayDate[0].checked)
+			displayDate = 1;
 
-		if ($weatherDateReadability[0].checked)
-			weatherdate_readability = 1;
+		if ($displayDigitalTime[0].checked)
+			displayDigitalTime = 1;
 		
 
 	var options = {
@@ -97,11 +84,8 @@ function getAndStoreConfigData() {
 		weatherFrequency: $weatherFrequencySlider.val(),
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
-        displayPrefix: display_Prefix,
-        weatherDateAlignment: 1,
-        hourMinutesAlignment: $hourMinutesAlignment.val(),
-		hourMinutesReadability: hourminutes_readability,
-		weatherDateReadability: weatherdate_readability
+		displayDate: displayDate,
+		displayDigitalTime: displayDigitalTime
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -109,10 +93,8 @@ function getAndStoreConfigData() {
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
-	localStorage.displayPrefix = options.displayPrefix;
-	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
-	localStorage.hourMinutesReadability = options.hourMinutesReadability;
-	localStorage.weatherDateReadability = options.weatherDateReadability;
+	localStorage.displayDate = options.displayDate;
+	localStorage.displayDigitalTime = options.displayDigitalTime;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
