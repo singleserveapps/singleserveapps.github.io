@@ -148,7 +148,7 @@ function getAndStoreConfigData() {
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
-		weatherLocation: $weatherLocation.val();
+		weatherLocation: $weatherLocation.val(),
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
 		displayDate: displayDate,
