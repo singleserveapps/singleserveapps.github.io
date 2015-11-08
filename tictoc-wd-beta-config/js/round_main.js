@@ -18,6 +18,8 @@ function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $useGPS = $('#useGPS');
+	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayDate = $('#displayDate');
@@ -31,6 +33,13 @@ function loadOptions() {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
+		$useGPS.val("0");
+		$useGPS.val(localStorage.useGPS);
+		$weatherLocation.text = localStorage.weatherLocation;
+		$shakeforLoHi.val("0");
+		$shakeforLoHi.val(localStorage.shakeforLoHi);
+		$useCelsius.val("0");
+		$useCelsius.val(localStorage.useCelsius);
 		$displayDate.val("0");
 		$displayDate.val(localStorage.displayDate);
 		$displayMonth.val("0");
@@ -44,6 +53,10 @@ function loadOptions() {
 		$vibrateBT.val("0");
 		$vibrateBT.val(localStorage.vibrateBT);
 
+		$useGPS[0].checked = false;
+		if (localStorage.useGPS == "1")
+			$useGPS[0].checked = true;
+		
 		$shakeforLoHi[0].checked = false;
 		if (localStorage.shakeforLoHi == "1")
 			$shakeforLoHi[0].checked = true;
@@ -74,7 +87,6 @@ function loadOptions() {
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
-
 	}
 }
 
@@ -82,6 +94,8 @@ function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $useGPS = $('#useGPS');
+	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayDate = $('#displayDate');
@@ -91,6 +105,7 @@ function getAndStoreConfigData() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
         
+	var useGPS = 0;
 	var shake_for_LoHi = 0;
 	var use_Celsius = 0;
 	var invert_Colors = 0;
@@ -101,6 +116,9 @@ function getAndStoreConfigData() {
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
 
+	if ($useGPS[0].checked)
+		useGPS = 1;
+	
 	if ($shakeforLoHi[0].checked)
 		shake_for_LoHi = 1;
 
@@ -129,6 +147,8 @@ function getAndStoreConfigData() {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
+		useGPS: useGPS,
+		weatherLocation: $weatherLocation.val(),
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
 		displayDate: displayDate,
@@ -142,6 +162,8 @@ function getAndStoreConfigData() {
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.useGPS = options.useGPS;
+	localStorage.weatherLocation = options.weatherLocation;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayDate = options.displayDate;
