@@ -57,6 +57,25 @@
 		</div>
 		<div class='item-container-content'>
 			<label class='item'>
+				Use GPS for weather
+				<input id='useGPS' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+        <div class='item-container-footer'>
+	        Check to use current GPS location for weather conditions or manually enter weather location information below.
+		 </div>
+        <div class="item-container-content">
+            <label class="item">
+            Weather location
+            <div class="item-input-wrapper">
+                <input type="text" class="item-input" id="weatherLocation" placeholder="e.g. 'San Diego CA US', or '92103 US'">
+            </div>
+        </div>
+        <div class='item-container-footer'>
+	        Enter location for non-GPS weather condition retrieval.
+		 </div>
+		<div class='item-container-content'>
+			<label class='item'>
 				Shake for Lo/Hi Temperature
 				<input id='shakeforLoHi' type='checkbox' class='item-checkbox'>
 			</label>
@@ -83,7 +102,7 @@
     			</label>
   		</div>
   		<div class='item-container-footer'>
-	        	Select weather information update frequency via GPS (minutes). Note: Change the weather frequency to force a weather update.
+	        	Select how often weather information is updated (minutes).
 		 </div>	
 	</div>
 	
@@ -118,6 +137,18 @@
           <div class='item-container-footer'>
               Check to display weather & date lines using a larger font size. Relaunch watchface to apply display option.
          </div>
+	</div>
+    <div class='item-container'>
+		<div class='item-container-header'>Additional options</div>		
+		<div class='item-container-content'>
+			<label class='item'>
+				Vibrate on Bluetooth disconnect
+				<input id='vibrateBT' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+	        	Check to vibrate on Bluetooth disconnect. Hour hand will also turn <font color="blue">blue</font> when disconnected.
+		 </div>
 	</div>
 	
 	<div class='item-container'>
