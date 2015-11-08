@@ -35,7 +35,7 @@ function loadOptions() {
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
-		$weatherLocation.val = localStorage.weatherLocation;
+		$weatherLocation.val(localStorage.weatherLocation);
 		$shakeforLoHi.val("0");
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
 		$useCelsius.val("0");
