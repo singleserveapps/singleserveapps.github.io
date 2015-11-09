@@ -83,7 +83,8 @@ function loadOptions() {
 	
 		$weatherDateDTimeReadability[0].checked = false;
 		if (localStorage.weatherDateDTimeReadability == "1")
-			
+			$weatherDateDTimeReadability[0].checked = true;
+		
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
