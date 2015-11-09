@@ -28,6 +28,7 @@ function loadOptions() {
 	var $displayDots369 = $('#displayDots369');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
+	var $useThinHands = $('#useThinHands');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -52,6 +53,8 @@ function loadOptions() {
 		$weatherDateDTimeReadability.val(localStorage.weatherDateDTimeReadability);
 		$vibrateBT.val("0");
 		$vibrateBT.val(localStorage.vibrateBT);
+		$useThinHands.val("0");
+		$useThinHands.val(localStorage.useThinHands);
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
@@ -83,11 +86,15 @@ function loadOptions() {
 	
 		$weatherDateDTimeReadability[0].checked = false;
 		if (localStorage.weatherDateDTimeReadability == "1")
-			$weatherDateDTimeReadability[0].checked = true;
+			$weatherDateDTimeReadability[0].checked = true;			
 			
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
+		
+		$useThinHands[0].checked = false;
+		if (localStorage.useThinHands == "1")
+			$useThinHands[0].checked = true;
 	}
 }
 
@@ -105,7 +112,8 @@ function getAndStoreConfigData() {
 	var $displayDots369 = $('#displayDots369');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
-        
+	var $useThinHands = $('#useThinHands');
+	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
 	var use_Celsius = 0;
@@ -116,6 +124,7 @@ function getAndStoreConfigData() {
 	var displayDots369 = 0;
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
+	var useThinHands = 0;	
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -144,6 +153,9 @@ function getAndStoreConfigData() {
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
 
+	if ($useThinHands[0].checked)
+		useThinHands = 1;
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
@@ -157,7 +169,8 @@ function getAndStoreConfigData() {
 		displayDigitalTime: displayDigitalTime,
 		displayDots369: displayDots369,		
 		weatherDateDTimeReadability: weatherdatedtime_readability,
-		vibrateBT: vibrateBT
+		vibrateBT: vibrateBT,
+		useThinHands: useThinHands
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -173,6 +186,7 @@ function getAndStoreConfigData() {
 	localStorage.displayDots369 = options.displayDots369;
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
+	localStorage.useThinHands = options.useThinHands;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
