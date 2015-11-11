@@ -29,6 +29,7 @@ function loadOptions() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
+	var $displayBattery = $('#displayBattery');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -55,6 +56,8 @@ function loadOptions() {
 		$vibrateBT.val(localStorage.vibrateBT);
 		$useThinHands.val("0");
 		$useThinHands.val(localStorage.useThinHands);
+		$displayBattery.val("0");
+		$displayBattery.val(localStorage.displayBattery);
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
@@ -95,6 +98,10 @@ function loadOptions() {
 		$useThinHands[0].checked = false;
 		if (localStorage.useThinHands == "1")
 			$useThinHands[0].checked = true;
+		
+		$displayBattery[0].checked = false;
+		if (localStorage.displayBattery == "1")
+			$displayBattery[0].checked = true;
 	}
 }
 
@@ -113,6 +120,7 @@ function getAndStoreConfigData() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
+	var $displayBattery = $('#displayBattery');	
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -124,7 +132,8 @@ function getAndStoreConfigData() {
 	var displayDots369 = 0;
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
-	var useThinHands = 0;	
+	var useThinHands = 0;
+	var displayBattery = 0;		
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -156,6 +165,9 @@ function getAndStoreConfigData() {
 	if ($useThinHands[0].checked)
 		useThinHands = 1;
 
+	if ($displayBattery[0].checked)
+		displayBattery = 1;
+	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
@@ -170,7 +182,8 @@ function getAndStoreConfigData() {
 		displayDots369: displayDots369,		
 		weatherDateDTimeReadability: weatherdatedtime_readability,
 		vibrateBT: vibrateBT,
-		useThinHands: useThinHands
+		useThinHands: useThinHands,
+		displayBattery: displayBattery		
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -187,6 +200,7 @@ function getAndStoreConfigData() {
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
 	localStorage.useThinHands = options.useThinHands;
+	localStorage.displayBattery = options.displayBattery;	
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
