@@ -179,6 +179,8 @@ function getAndStoreConfigData() {
 		textColor: $textColorPicker.val(),
 		hourHandColor: $hourHandColorPicker.val(),
 		minuteHandColor: $minuteHandColorPicker.val(),
+		hourMarkersColor: 0,
+		minorMarkersColor: 0,
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
