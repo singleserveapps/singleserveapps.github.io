@@ -41,9 +41,7 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$textColorPicker[0].value = localStorage.dotsColor;
-		if ($textColorPicker[0].value === undefined)
-			$textColorPicker[0].value = "0055FF";
+		$dotsColorPicker[0].value = localStorage.dotsColor;
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
@@ -197,9 +195,6 @@ function getAndStoreConfigData() {
 	
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
-	
-	if ($dotsColorPicker.val() == "")
-		$dotsColorPicker.val() = "0055FF";
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
