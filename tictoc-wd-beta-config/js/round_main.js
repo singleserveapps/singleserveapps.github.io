@@ -42,7 +42,7 @@ function loadOptions() {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
 		$textColorPicker[0].value = localStorage.dotsColor;
-		if ($textColorPicker[0].value == "")
+		if ($textColorPicker[0].value.undefined)
 			$textColorPicker[0].value = "0055FF";
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
