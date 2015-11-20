@@ -17,6 +17,7 @@ function submitHandler() {
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
+	var $dotsColorPicker = $('#dotsColorPicker');
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
@@ -36,6 +37,7 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
+		$dotsColorPicker[0].value = localStorage.dotsColor;
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
@@ -112,6 +114,7 @@ function loadOptions() {
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
+	var $dotsColorPicker = $('#dotsColorPicker');	
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
@@ -177,6 +180,7 @@ function getAndStoreConfigData() {
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
+		dotsColor: $dotsColorPicker.val(),		
 		hourHandColor: $hourHandColorPicker.val(),
 		minuteHandColor: $minuteHandColorPicker.val(),
 		hourMarkersColor: 0,
