@@ -40,13 +40,9 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		$hourHandColorPicker[0].value = "0xFF0000";
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
-		$minuteHandColorPicker[0].value = "0xFFFFFF";
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
-		$hourMarkersColorPicker[0].value = "0xFF0000";
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
-		$minorMarkersColorPicker[0].value = "0xFFFFFF";
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
@@ -196,18 +192,6 @@ function getAndStoreConfigData() {
 	
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
-	
-	if ($hourHandColorPicker[0].val = "")
-		$hourHandColorPicker[0].val = "0xFF0000";
-
-	if ($minuteHandColorPicker[0].val = "")
-		$minuteHandColorPicker[0].val = "0xFFFFFF";
-	
-	if ($hourMarkersColorPicker[0].val = "")
-		$hourMarkersColorPicker[0].value = "0xFF0000";
-
-	if ($minorMarkersColorPicker[0].value = "")
-		$minorMarkersColorPicker[0].val = "0xFFFFFF";
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
