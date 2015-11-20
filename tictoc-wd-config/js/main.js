@@ -17,6 +17,9 @@ function submitHandler() {
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
+	var $dotsColorPicker = $('#dotsColorPicker');
+	var $hourHandColorPicker = $('#hourHandColorPicker');
+	var $minuteHandColorPicker = $('#minuteHandColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -34,6 +37,9 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
+		$dotsColorPicker[0].value = localStorage.dotsColor;
+		$hourHandColorPicker[0].value = localStorage.hourHandColor;
+		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
@@ -108,6 +114,9 @@ function loadOptions() {
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
+	var $dotsColorPicker = $('#dotsColorPicker');	
+	var $hourHandColorPicker = $('#hourHandColorPicker');
+	var $minuteHandColorPicker = $('#minuteHandColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -171,6 +180,11 @@ function getAndStoreConfigData() {
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
+		dotsColor: $dotsColorPicker.val(),		
+		hourHandColor: $hourHandColorPicker.val(),
+		minuteHandColor: $minuteHandColorPicker.val(),
+		hourMarkersColor: 0,
+		minorMarkersColor: 0,
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
@@ -189,6 +203,8 @@ function getAndStoreConfigData() {
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
+	localStorage.hourHandColor = options.hourHandColor;
+	localStorage.minuteHandColor = options.minuteHandColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;

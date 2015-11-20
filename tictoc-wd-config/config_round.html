@@ -3,25 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel='stylesheet' type='text/css' href='/tictoc-wd-config/bower_components/pebble-slate/dist/css/slate.min.css'>
-	<link rel='stylesheet' type='text/css' href='/tictoc-wd-config/css/style.css'>
+	<link rel='stylesheet' type='text/css' href='/tictoc-wd-beta-config/bower_components/pebble-slate/dist/css/slate.min.css'>
+	<link rel='stylesheet' type='text/css' href='/tictoc-wd-beta-config/css/style.css'>
 </head>
 <body>
 	<div class='item-container'>
 		<div class='item-container-header'>Watchface color options</div>
 		<div class='item-container-content'>
 			<label class='item'>
-				Background Color
-				<input id='backgroundColorPicker' type='text' class='item-color item-color-sunny' value='#000000'>
+				Background
+				<input id='backgroundColorPicker' type='text' class='item-color item-color-normal' value='#000000'>
 			</label>
 			
 			<label class='item'>
-				Text Color
-				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
+				Text
+				<input id='textColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>
+			
+			<label class='item'>
+				Hour hand
+				<input id='hourHandColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
+			</label>
+			
+			<label class='item'>
+				Minute hand
+				<input id='minuteHandColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>
+			
+			<label class='item'>
+				Hour markers
+				<input id='hourMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
+			</label>
+			
+			<label class='item'>
+				Minor markers
+				<input id='minorMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>
+			
+			<label class='item'>
+				12, 3, 6, & 9 dot markers
+				<input id='dotsColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
-		        Choose the background and text colors for the watchface. 
+		        Choose the background, text, hour/minute hands, hour/minor/dot markers colors for the watchface. 
 		</div>
 	</div>	
 	
@@ -190,7 +215,7 @@
 		</div>
 	</div>
 
-	<script src='/tictoc-wd-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
-	<script src='/tictoc-wd-config/js/round_main.js'></script>
+	<script src='/tictoc-wd-beta-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
+	<script src='/tictoc-wd-beta-config/js/round_main.js'></script>
 </body>
 </html>
