@@ -183,7 +183,8 @@ function getAndStoreConfigData() {
 		weatherDateDTimeReadability: weatherdatedtime_readability,
 		vibrateBT: vibrateBT,
 		useThinHands: useThinHands,
-		displayBattery: displayBattery		
+		displayBattery: displayBattery,
+		displayMinuteLines: 0
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
