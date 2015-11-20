@@ -196,6 +196,18 @@ function getAndStoreConfigData() {
 	
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
+	
+	if ($hourHandColorPicker[0].val = "")
+		$hourHandColorPicker[0].val = "0xFF0000";
+
+	if ($minuteHandColorPicker[0].val = "")
+		$minuteHandColorPicker[0].val = "0xFFFFFF";
+	
+	if ($hourMarkersColorPicker[0].val = "")
+		$hourMarkersColorPicker[0].value = "0xFF0000";
+
+	if ($minorMarkersColorPicker[0].value = "")
+		$minorMarkersColorPicker[0].val = "0xFFFFFF";
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
