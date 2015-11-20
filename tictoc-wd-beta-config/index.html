@@ -19,17 +19,9 @@
 				Text Color
 				<input id='textColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
 			</label>
-			<label class='item'>
-				Hour Hand Color
-				<input id='hourhandColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
-			</label>
-			<label class='item'>
-				Minute Hand Color
-				<input id='minutehandColorPicker' type='text' class='item-color item-color-sunny' value='0xffffff'>
-			</label>
 		</div>
 		<div class='item-container-footer'>
-		        Choose the background, text, hour & minute hand colors for the watchface. 
+		        Choose the background and text colors for the watchface. 
 		</div>
 	</div>	
 	
@@ -114,6 +106,29 @@
 	</div>
 		
 	<div class='item-container'>
+	<div class='item-container-header'>Dial marker options</div>
+        <div class='item-container-content'>
+            <label class='item'>
+                Display dots at 3, 6, & 9 positions
+                <input id='displayDots369' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to display dots at the 3, 6, & 9 positions. Relaunch watchface to apply display option.
+        </div>
+
+        <div class='item-container-content'>
+            <label class='item'>
+                Display minute indicators
+                <input id='displayMinuteLines' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to display line markers at minute positions on the dial. Relaunch watchface to apply display option.
+        </div>
+	</div>
+	
+	<div class='item-container'>
 	<div class='item-container-header'>Display options</div>
 		<div class='item-container-content'>
             <label class='item'>
@@ -136,16 +151,6 @@
         </div>
 
         <div class='item-container-content'>
-            <label class='item'>
-                Display dots at 3, 6, & 9 positions
-                <input id='displayDots369' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display dots at the 3, 6, & 9 positions. Relaunch watchface to apply display option.
-        </div>
-
-        <div class='item-container-content'>
              <label class='item'>
                 Use larger font for text elements
                 <input id='weatherDateDTimeReadability' type='checkbox' class='item-checkbox'>
@@ -154,7 +159,7 @@
           <div class='item-container-footer'>
               Check to display weather, date & digital time lines using a larger font size. Relaunch watchface to apply display option.
          </div>
-
+		 
         <div class='item-container-content'>
 			<label class='item'>
 				Use thinner watch hands
@@ -163,7 +168,7 @@
 		</div>
 		<div class='item-container-footer'>
 	        	Check to use watch hands with a thinner width.
-		 </div>
+		 </div>		 
 	</div>
 
     <div class='item-container'>
