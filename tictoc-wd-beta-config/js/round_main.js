@@ -14,9 +14,14 @@ function submitHandler() {
 	});
 }
 
+
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
+	var $hourHandColorPicker = $('#hourHandColorPicker');
+	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
+	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -35,6 +40,10 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
+		$hourHandColorPicker[0].value = localStorage.hourHandColor;
+		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
+		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
+		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
@@ -115,6 +124,10 @@ function loadOptions() {
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
+	var $hourHandColorPicker = $('#hourHandColorPicker');
+	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
+	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -179,10 +192,14 @@ function getAndStoreConfigData() {
 	
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
-	
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
+		hourHandColor: $hourHandColorPicker.val(),
+		minuteHandColor: $minuteHandColorPicker.val(),
+		hourMarkersColor: $hourMarkersColorPicker.val(),
+		minorMarkersColor: $minorMarkersColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
@@ -201,6 +218,10 @@ function getAndStoreConfigData() {
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
+	localStorage.hourHandColor = options.hourHandColor;
+	localStorage.minuteHandColor = options.minuteHandColor;
+	localStorage.hourMarkersColor = options.hourMarkersColor;
+	localStorage.minorMarkersColor = options.minorMarkersColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;
