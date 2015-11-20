@@ -41,11 +41,9 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
-		
-		if (localStorage.dotsColor == "")
-			localStorage.dotsColor = "0055FF";
-		$dotsColorPicker.val(localStorage.dotsColor);
-
+		$textColorPicker[0].value = localStorage.dotsColor;
+		if ($textColorPicker[0].value == null)
+			$textColorPicker[0].value = "0055FF";
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
