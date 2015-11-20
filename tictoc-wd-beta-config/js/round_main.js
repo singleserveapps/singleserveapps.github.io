@@ -40,9 +40,13 @@ function loadOptions() {
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$textColorPicker[0].value = localStorage.textColor;
+		$hourHandColorPicker[0].value = "0xFF0000";
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
+		$minuteHandColorPicker[0].value = "0xFFFFFF";
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
+		$hourMarkersColorPicker[0].value = "0xFF0000";
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
+		$minorMarkersColorPicker[0].value = "0xFFFFFF";
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
