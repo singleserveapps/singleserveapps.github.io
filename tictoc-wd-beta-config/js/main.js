@@ -14,12 +14,15 @@ function submitHandler() {
 	});
 }
 
+
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $dotsColorPicker = $('#dotsColorPicker');
+	var $dotsColorPicker = $('#dotsColorPicker');	
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
+	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -41,6 +44,8 @@ function loadOptions() {
 		$dotsColorPicker[0].value = localStorage.dotsColor;
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
+		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
+		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
@@ -121,9 +126,11 @@ function loadOptions() {
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $dotsColorPicker = $('#dotsColorPicker');	
+	var $dotsColorPicker = $('#dotsColorPicker');
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
+	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -136,8 +143,8 @@ function getAndStoreConfigData() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
+	var $displayBattery = $('#displayBattery');
 	var $displayMinuteLines = $('#displayMinuteLines');
-	var $displayBattery = $('#displayBattery');	
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -150,7 +157,7 @@ function getAndStoreConfigData() {
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
 	var useThinHands = 0;
-	var displayBattery = 0;		
+	var displayBattery = 0;
 	var displayMinuteLines = 0;
 
 	if ($useGPS[0].checked)
@@ -192,11 +199,11 @@ function getAndStoreConfigData() {
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
-		dotsColor: $dotsColorPicker.val(),		
+		dotsColor: $dotsColorPicker.val(),
 		hourHandColor: $hourHandColorPicker.val(),
 		minuteHandColor: $minuteHandColorPicker.val(),
-		hourMarkersColor: 0,
-		minorMarkersColor: 0,
+		hourMarkersColor: $hourMarkersColorPicker.val(),
+		minorMarkersColor: $minorMarkersColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
@@ -210,13 +217,16 @@ function getAndStoreConfigData() {
 		vibrateBT: vibrateBT,
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
-		displayMinuteLines: displayMinuteLines
+		displayMinuteLines: displayMinuteLines		
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
+	localStorage.dotsColor = options.dotsColor;	
 	localStorage.hourHandColor = options.hourHandColor;
 	localStorage.minuteHandColor = options.minuteHandColor;
+	localStorage.hourMarkersColor = options.hourMarkersColor;
+	localStorage.minorMarkersColor = options.minorMarkersColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;
@@ -229,7 +239,8 @@ function getAndStoreConfigData() {
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
 	localStorage.useThinHands = options.useThinHands;
-	localStorage.displayBattery = options.displayBattery;	
+	localStorage.displayBattery = options.displayBattery;
+	localStorage.displayMinuteLines = options.displayMinuteLines;	
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
