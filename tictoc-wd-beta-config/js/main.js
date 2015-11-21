@@ -33,6 +33,7 @@ function loadOptions() {
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
 	var $displayBattery = $('#displayBattery');
+	var $displayMinuteLines = $('#displayMinuteLines');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -64,6 +65,8 @@ function loadOptions() {
 		$useThinHands.val(localStorage.useThinHands);
 		$displayBattery.val("0");
 		$displayBattery.val(localStorage.displayBattery);
+		$displayMinuteLines.val("0");
+		$displayMinuteLines.val(localStorage.displayMinuteLines);
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
@@ -108,6 +111,10 @@ function loadOptions() {
 		$displayBattery[0].checked = false;
 		if (localStorage.displayBattery == "1")
 			$displayBattery[0].checked = true;
+
+		$displayMinuteLines[0].checked = false;
+		if (localStorage.displayMinuteLines == "1")
+			$displayMinuteLines[0].checked = true;
 	}
 }
 
@@ -129,6 +136,7 @@ function getAndStoreConfigData() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
+	var $displayMinuteLines = $('#displayMinuteLines');
 	var $displayBattery = $('#displayBattery');	
 	
 	var useGPS = 0;
@@ -143,6 +151,7 @@ function getAndStoreConfigData() {
 	var vibrateBT = 0;
 	var useThinHands = 0;
 	var displayBattery = 0;		
+	var displayMinuteLines = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -177,6 +186,9 @@ function getAndStoreConfigData() {
 	if ($displayBattery[0].checked)
 		displayBattery = 1;
 	
+	if ($displayMinuteLines[0].checked)
+		displayMinuteLines = 1;
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
@@ -198,7 +210,7 @@ function getAndStoreConfigData() {
 		vibrateBT: vibrateBT,
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
-		displayMinuteLines: 0
+		displayMinuteLines: displayMinuteLines
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
