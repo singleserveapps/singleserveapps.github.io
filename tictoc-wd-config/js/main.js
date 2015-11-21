@@ -14,12 +14,15 @@ function submitHandler() {
 	});
 }
 
+
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $dotsColorPicker = $('#dotsColorPicker');
+	var $dotsColorPicker = $('#dotsColorPicker');	
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
+	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -28,11 +31,11 @@ function loadOptions() {
 	var $displayDate = $('#displayDate');
 	var $displayMonth = $('#displayMonth');
 	var $displayDigitalTime = $('#displayDigitalTime');
-	var $displayDots369 = $('#displayDots369');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
 	var $displayBattery = $('#displayBattery');
+	var $displayMinuteLines = $('#displayMinuteLines');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -40,6 +43,8 @@ function loadOptions() {
 		$dotsColorPicker[0].value = localStorage.dotsColor;
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
+		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
+		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
@@ -54,8 +59,6 @@ function loadOptions() {
 		$displayMonth.val(localStorage.displayMonth);
 		$displayDigitalTime.val("0");
 		$displayDigitalTime.val(localStorage.displayDigitalTime);
-		$displayDots369.val("0");
-		$displayDots369.val(localStorage.displayDots369);
 		$weatherDateDTimeReadability.val("0");
 		$weatherDateDTimeReadability.val(localStorage.weatherDateDTimeReadability);
 		$vibrateBT.val("0");
@@ -64,6 +67,8 @@ function loadOptions() {
 		$useThinHands.val(localStorage.useThinHands);
 		$displayBattery.val("0");
 		$displayBattery.val(localStorage.displayBattery);
+		$displayMinuteLines.val("0");
+		$displayMinuteLines.val(localStorage.displayMinuteLines);
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
@@ -89,10 +94,6 @@ function loadOptions() {
 		if (localStorage.displayDigitalTime == "1")
 			$displayDigitalTime[0].checked = true;
 		
-		$displayDots369[0].checked = false;
-		if (localStorage.displayDots369 == "1")
-			$displayDots369[0].checked = true;
-	
 		$weatherDateDTimeReadability[0].checked = false;
 		if (localStorage.weatherDateDTimeReadability == "1")
 			$weatherDateDTimeReadability[0].checked = true;			
@@ -108,15 +109,21 @@ function loadOptions() {
 		$displayBattery[0].checked = false;
 		if (localStorage.displayBattery == "1")
 			$displayBattery[0].checked = true;
+
+		$displayMinuteLines[0].checked = false;
+		if (localStorage.displayMinuteLines == "1")
+			$displayMinuteLines[0].checked = true;
 	}
 }
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
 	var $textColorPicker = $('#textColorPicker');
-	var $dotsColorPicker = $('#dotsColorPicker');	
+	var $dotsColorPicker = $('#dotsColorPicker');
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
+	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -125,11 +132,11 @@ function getAndStoreConfigData() {
 	var $displayDate = $('#displayDate');
 	var $displayMonth = $('#displayMonth');
 	var $displayDigitalTime = $('#displayDigitalTime');
-	var $displayDots369 = $('#displayDots369');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $useThinHands = $('#useThinHands');
-	var $displayBattery = $('#displayBattery');	
+	var $displayBattery = $('#displayBattery');
+	var $displayMinuteLines = $('#displayMinuteLines');
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -138,11 +145,11 @@ function getAndStoreConfigData() {
 	var displayDate = 0;
 	var displayMonth = 0;
 	var displayDigitalTime = 0;
-	var displayDots369 = 0;
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
 	var useThinHands = 0;
-	var displayBattery = 0;		
+	var displayBattery = 0;
+	var displayMinuteLines = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -161,9 +168,6 @@ function getAndStoreConfigData() {
 
 	if ($displayDigitalTime[0].checked)
 		displayDigitalTime = 1;
-	
-	if ($displayDots369[0].checked)
-		displayDots369 = 1;
 
 	if ($weatherDateDTimeReadability[0].checked)
 		weatherdatedtime_readability = 1;
@@ -177,14 +181,17 @@ function getAndStoreConfigData() {
 	if ($displayBattery[0].checked)
 		displayBattery = 1;
 	
+	if ($displayMinuteLines[0].checked)
+		displayMinuteLines = 1;
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
-		dotsColor: $dotsColorPicker.val(),		
+		dotsColor: $dotsColorPicker.val(),
 		hourHandColor: $hourHandColorPicker.val(),
 		minuteHandColor: $minuteHandColorPicker.val(),
-		hourMarkersColor: 0,
-		minorMarkersColor: 0,
+		hourMarkersColor: $hourMarkersColorPicker.val(),
+		minorMarkersColor: $minorMarkersColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
@@ -193,18 +200,20 @@ function getAndStoreConfigData() {
 		displayDate: displayDate,
 		displayMonth: displayMonth,
 		displayDigitalTime: displayDigitalTime,
-		displayDots369: displayDots369,		
 		weatherDateDTimeReadability: weatherdatedtime_readability,
 		vibrateBT: vibrateBT,
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
-		displayMinuteLines: 0
+		displayMinuteLines: displayMinuteLines		
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.textColor = options.textColor;
+	localStorage.dotsColor = options.dotsColor;	
 	localStorage.hourHandColor = options.hourHandColor;
 	localStorage.minuteHandColor = options.minuteHandColor;
+	localStorage.hourMarkersColor = options.hourMarkersColor;
+	localStorage.minorMarkersColor = options.minorMarkersColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;
@@ -213,11 +222,11 @@ function getAndStoreConfigData() {
 	localStorage.displayDate = options.displayDate;
 	localStorage.displayMonth = options.displayMonth;
 	localStorage.displayDigitalTime = options.displayDigitalTime;
-	localStorage.displayDots369 = options.displayDots369;
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
 	localStorage.useThinHands = options.useThinHands;
-	localStorage.displayBattery = options.displayBattery;	
+	localStorage.displayBattery = options.displayBattery;
+	localStorage.displayMinuteLines = options.displayMinuteLines;	
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
