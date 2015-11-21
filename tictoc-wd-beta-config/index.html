@@ -19,7 +19,7 @@
 				Text
 				<input id='textColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
 			</label>
-
+			
 			<label class='item'>
 				Hour hand
 				<input id='hourHandColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
@@ -31,15 +31,24 @@
 			</label>
 			
 			<label class='item'>
+				Hour markers
+				<input id='hourMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
+			</label>
+			
+			<label class='item'>
+				Minor markers
+				<input id='minorMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>
+			
+			<label class='item'>
 				Dot markers (12, 3, 6, & 9)
 				<input id='dotsColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
 			</label>
-
 		</div>
 		<div class='item-container-footer'>
-		        Choose the background, text, hour/minute hands, and dot markers colors for the watchface. 
+		        Choose the background, text, hour/minute hands, hour/minor/dot markers colors for the watchface. 
 		</div>
-	</div>
+	</div>	
 	
 	<div class='item-container'>
 		<div class='item-container-header'>Weather options <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple_retina.png" width="134" height="29"/> </a>
@@ -121,7 +130,6 @@
         </div>
 	</div>
 		
-		
 	<div class='item-container'>
 	<div class='item-container-header'>Dial marker options</div>
         <div class='item-container-content'>
@@ -168,16 +176,6 @@
         </div>
 
         <div class='item-container-content'>
-            <label class='item'>
-                Display dots at 3, 6, & 9 positions
-                <input id='displayDots369' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display dots at the 3, 6, & 9 positions.
-        </div>
-
-        <div class='item-container-content'>
              <label class='item'>
                 Use larger font for text elements
                 <input id='weatherDateDTimeReadability' type='checkbox' class='item-checkbox'>
@@ -186,7 +184,7 @@
           <div class='item-container-footer'>
               Check to display weather, date & digital time lines using a larger font size.
          </div>
-
+		 
         <div class='item-container-content'>
 			<label class='item'>
 				Use thinner watch hands
@@ -195,7 +193,7 @@
 		</div>
 		<div class='item-container-footer'>
 	        	Check to use watch hands with a thinner width.
-		 </div>
+		 </div>		 
 	</div>
 
     <div class='item-container'>
