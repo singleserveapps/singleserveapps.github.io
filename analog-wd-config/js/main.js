@@ -14,6 +14,13 @@ function submitHandler() {
 	});
 }
 
+function getStorageValue(item, default_value){
+    var retVal = localStorage.getItem(item);
+    if (retVal == null || retVal == 'undefined' || retVal == 'null'){
+        retVal = default_value;
+    }
+    return retVal;
+}
 
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
@@ -23,7 +30,7 @@ function loadOptions() {
 	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
 	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $useGPS = $('#useGPS');
+	var $useGPS = getStorageValue("useGPS", "1"); //$('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
@@ -41,8 +48,8 @@ function loadOptions() {
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$useGPS.val("1");
-		$useGPS.val(localStorage.useGPS);
+		//$useGPS.val("1");
+		//$useGPS.val(localStorage.useGPS);
 		$weatherLocation.val(localStorage.weatherLocation);
 		$shakeforLoHi.val("0");
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
