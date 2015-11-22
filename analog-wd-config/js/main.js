@@ -41,14 +41,14 @@ function loadOptions() {
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$useGPS.val("0");
+		$useGPS.val("1");
 		$useGPS.val(localStorage.useGPS);
 		$weatherLocation.val(localStorage.weatherLocation);
 		$shakeforLoHi.val("0");
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
 		$useCelsius.val("0");
 		$useCelsius.val(localStorage.useCelsius);
-		$displayDate.val("0");
+		$displayDate.val("1");
 		$displayDate.val(localStorage.displayDate);
 		$displayDigitalTime.val("0");
 		$displayDigitalTime.val(localStorage.displayDigitalTime);
