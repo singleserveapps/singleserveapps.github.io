@@ -30,7 +30,7 @@ function loadOptions() {
 	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
 	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
-	var $useGPS = getStorageValue("useGPS", "1"); //$('#useGPS'); //
+	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
