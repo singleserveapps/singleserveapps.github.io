@@ -42,7 +42,7 @@ function loadOptions() {
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("1");
-		$useGPS.val(localStorage.useGPS);
+		//$useGPS.val(localStorage.useGPS);
 		$weatherLocation.val(localStorage.weatherLocation);
 		$shakeforLoHi.val("0");
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
