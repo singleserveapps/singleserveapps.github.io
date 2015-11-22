@@ -48,27 +48,11 @@ function loadOptions() {
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		//$useGPS.val("1");
-		//$useGPS.val(localStorage.useGPS);
 		$weatherLocation.val(localStorage.weatherLocation);
-		$shakeforLoHi.val("0");
-		$shakeforLoHi.val(localStorage.shakeforLoHi);
-		$useCelsius.val("0");
-		$useCelsius.val(localStorage.useCelsius);
-		$displayDate.val("1");
-		$displayDate.val(localStorage.displayDate);
-		$displayDigitalTime.val("0");
-		$displayDigitalTime.val(localStorage.displayDigitalTime);
-		$weatherDateDTimeReadability.val("0");
-		$weatherDateDTimeReadability.val(localStorage.weatherDateDTimeReadability);
-		$vibrateBT.val("0");
-		$vibrateBT.val(localStorage.vibrateBT);
-		$displayBattery.val("0");
-		$displayBattery.val(localStorage.displayBattery);
 
-		$useGPS[0].checked = false;
-		if (localStorage.useGPS == "1")
-			$useGPS[0].checked = true;
+		$useGPS[0].checked = true;
+		if (localStorage.useGPS == "0")
+			$useGPS[0].checked = false;
 		
 		$shakeforLoHi[0].checked = false;
 		if (localStorage.shakeforLoHi == "1")
@@ -78,9 +62,9 @@ function loadOptions() {
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
 		
-		$displayDate[0].checked = false;
-		if (localStorage.displayDate == "1")
-			$displayDate[0].checked = true;
+		$displayDate[0].checked = true;
+		if (localStorage.displayDate == "0")
+			$displayDate[0].checked = false;
 
 		$displayDigitalTime[0].checked = false;
 		if (localStorage.displayDigitalTime == "1")
