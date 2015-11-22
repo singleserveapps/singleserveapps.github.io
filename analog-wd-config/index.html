@@ -100,9 +100,30 @@
 	        	Select how often weather information is updated (minutes).
 		 </div>	
 	</div>
-	
+
 	<div class='item-container'>
-		<div class='item-container-header'>Date options</div>		
+	<div class='item-container-header'>Display options</div>
+
+	     <div class='item-container-content'>
+            <label class='item'>
+                Display minute indicators
+                <input id='displayMinuteLines' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to display line markers at minute positions on the dial. Also toggles display of dot marker in twelve o'clock position.
+        </div>
+	
+        <div class='item-container-content'>
+             <label class='item'>
+                Use larger font for text elements
+                <input id='weatherDateDTimeReadability' type='checkbox' class='item-checkbox'>
+             </label>
+          </div>
+          <div class='item-container-footer'>
+              Check to display weather, date & digital time lines using a larger font size.
+         </div>		
+		
 		<div class='item-container-content'>
 			<label class='item'>
 				Display date
@@ -112,32 +133,6 @@
 		<div class='item-container-footer'>
 	        	Check to display current date information.
 		 </div>
-	</div>
-		
-	<div class='item-container'>
-	<div class='item-container-header'>Dial markers option</div>
-        <div class='item-container-content'>
-            <label class='item'>
-                Display minute indicators
-                <input id='displayMinuteLines' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display line markers at minute positions on the dial. Also toggles display of dot marker in twelve o'clock position.
-        </div>
-	</div>
-	
-	<div class='item-container'>
-	<div class='item-container-header'>Display options</div>
-		<div class='item-container-content'>
-            <label class='item'>
-                Display battery information
-                <input id='displayBattery' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display current battery charge level information.
-        </div>
 
         <div class='item-container-content'>
             <label class='item'>
@@ -148,16 +143,17 @@
         <div class='item-container-footer'>
             Check to display current time in digital format.
         </div>
+		
+		<div class='item-container-content'>
+            <label class='item'>
+                Display battery information
+                <input id='displayBattery' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to display current battery charge level information.
+        </div>
 
-        <div class='item-container-content'>
-             <label class='item'>
-                Use larger font for text elements
-                <input id='weatherDateDTimeReadability' type='checkbox' class='item-checkbox'>
-             </label>
-          </div>
-          <div class='item-container-footer'>
-              Check to display weather, date & digital time lines using a larger font size.
-         </div>	 
 	</div>
 
     <div class='item-container'>
