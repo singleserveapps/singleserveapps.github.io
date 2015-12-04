@@ -39,6 +39,7 @@ function loadOptions() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $displayBattery = $('#displayBattery');
+	var $displayHourDigits = $('#displayHourDigits');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -81,6 +82,10 @@ function loadOptions() {
 		$displayBattery[0].checked = false;
 		if (localStorage.displayBattery == "1")
 			$displayBattery[0].checked = true;
+		
+		$displayHourDigits[0].checked = false;
+		if (localStorage.displayHourDigits == "1")
+			$displayHourDigits[0].checked = true;		
 	}
 }
 
@@ -101,6 +106,7 @@ function getAndStoreConfigData() {
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
 	var $displayBattery = $('#displayBattery');
+	var $displayHourDigits = $('#displayHourDigits');
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -110,6 +116,7 @@ function getAndStoreConfigData() {
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
 	var displayBattery = 0;
+	var displayHourDigits = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -134,6 +141,9 @@ function getAndStoreConfigData() {
 
 	if ($displayBattery[0].checked)
 		displayBattery = 1;
+	
+	if ($displayHourDigits[0].checked)
+		displayHourDigits = 1;
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -151,7 +161,8 @@ function getAndStoreConfigData() {
 		displayDigitalTime: displayDigitalTime,
 		weatherDateDTimeReadability: weatherdatedtime_readability,
 		vibrateBT: vibrateBT,
-		displayBattery: displayBattery
+		displayBattery: displayBattery,
+		displayHourDigits: displayHourDigits
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -170,6 +181,7 @@ function getAndStoreConfigData() {
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
 	localStorage.displayBattery = options.displayBattery;
+	localStorage.displayHourDigits = options.displayHourDigits;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
