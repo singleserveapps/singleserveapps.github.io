@@ -36,6 +36,7 @@ function loadOptions() {
 	var $useThinHands = $('#useThinHands');
 	var $displayBattery = $('#displayBattery');
 	var $displayMinuteLines = $('#displayMinuteLines');
+	var $displayHourDigits = $('#displayHourDigits');	
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -113,6 +114,10 @@ function loadOptions() {
 		$displayMinuteLines[0].checked = false;
 		if (localStorage.displayMinuteLines == "1")
 			$displayMinuteLines[0].checked = true;
+
+		$displayHourDigits[0].checked = false;
+		if (localStorage.displayHourDigits == "1")
+			$displayHourDigits[0].checked = true;				
 	}
 }
 
@@ -137,6 +142,7 @@ function getAndStoreConfigData() {
 	var $useThinHands = $('#useThinHands');
 	var $displayBattery = $('#displayBattery');
 	var $displayMinuteLines = $('#displayMinuteLines');
+	var $displayHourDigits = $('#displayHourDigits');	
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -150,6 +156,7 @@ function getAndStoreConfigData() {
 	var useThinHands = 0;
 	var displayBattery = 0;
 	var displayMinuteLines = 0;
+	var displayHourDigits = 0;	
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -184,6 +191,9 @@ function getAndStoreConfigData() {
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
 
+	if ($displayHourDigits[0].checked)
+		displayHourDigits = 1;	
+
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
@@ -204,7 +214,8 @@ function getAndStoreConfigData() {
 		vibrateBT: vibrateBT,
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
-		displayMinuteLines: displayMinuteLines		
+		displayMinuteLines: displayMinuteLines,
+		displayHourDigits: displayHourDigits		
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -226,7 +237,8 @@ function getAndStoreConfigData() {
 	localStorage.vibrateBT = options.vibrateBT;
 	localStorage.useThinHands = options.useThinHands;
 	localStorage.displayBattery = options.displayBattery;
-	localStorage.displayMinuteLines = options.displayMinuteLines;	
+	localStorage.displayMinuteLines = options.displayMinuteLines;
+	localStorage.displayHourDigits = options.displayHourDigits;	
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
