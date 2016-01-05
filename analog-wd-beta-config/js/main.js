@@ -42,6 +42,7 @@ function loadOptions() {
 	var $useThinHands = $('#useThinHands');	
 	var $displayBattery = $('#displayBattery');
 	var $displayHourDigits = $('#displayHourDigits');
+	var $displaySecondsHand = $('#displaySecondsHand');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -92,7 +93,11 @@ function loadOptions() {
 		
 		$displayHourDigits[0].checked = false;
 		if (localStorage.displayHourDigits == "1")
-			$displayHourDigits[0].checked = true;		
+			$displayHourDigits[0].checked = true;
+			
+		$displaySecondsHand[0].checked = false;
+		if (localStorage.displaySecondsHand == "1")
+			$displaySecondsHand[0].checked = true;			
 	}
 }
 
@@ -116,6 +121,7 @@ function getAndStoreConfigData() {
 	var $useThinHands = $('#useThinHands');	
 	var $displayBattery = $('#displayBattery');
 	var $displayHourDigits = $('#displayHourDigits');
+	var $displaySecondsHand = $('#displaySecondsHand');
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -127,6 +133,7 @@ function getAndStoreConfigData() {
 	var useThinHands = 0;	
 	var displayBattery = 0;
 	var displayHourDigits = 0;
+	var displaySecondsHand = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -157,6 +164,9 @@ function getAndStoreConfigData() {
 	
 	if ($displayHourDigits[0].checked)
 		displayHourDigits = 1;
+		
+	if ($displaySecondsHand[0].checked)
+		displaySecondsHand = 1;		
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -177,7 +187,8 @@ function getAndStoreConfigData() {
 		vibrateBT: vibrateBT,
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
-		displayHourDigits: displayHourDigits
+		displayHourDigits: displayHourDigits,
+		displaySecondsHand: displaySecondsHand
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -199,6 +210,7 @@ function getAndStoreConfigData() {
 	localStorage.useThinHands = options.useThinHands;
 	localStorage.displayBattery = options.displayBattery;
 	localStorage.displayHourDigits = options.displayHourDigits;
+	localStorage.displaySecondsHand = options.displaySecondsHand;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
