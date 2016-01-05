@@ -31,6 +31,11 @@
 			</label>
 			
 			<label class='item'>
+				Seconds hand
+				<input id='secondsHandColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>
+
+			<label class='item'>
 				Hour markers
 				<input id='hourMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
 			</label>
@@ -103,6 +108,16 @@
 
 	<div class='item-container'>
 	<div class='item-container-header'>Display options</div>
+
+        <div class='item-container-content'>
+             <label class='item'>
+                Shake for seconds hand
+                <input id='displaySecondsHand' type='checkbox' class='item-checkbox'>
+             </label>
+          </div>
+          <div class='item-container-footer'>
+              Check to enable shake option to briefly show a seconds hand. Seconds hand displays for 15 seconds to save battery.
+         </div>	
 	
         <div class='item-container-content'>
              <label class='item'>
@@ -113,16 +128,6 @@
           <div class='item-container-footer'>
               Check to display number values for hour markers. Updates for 24-hour clock.
          </div>	
-         
-        <div class='item-container-content'>
-			<label class='item'>
-				Use thinner watch hands
-				<input id='useThinHands' type='checkbox' class='item-checkbox'>
-			</label>
-		</div>
-		<div class='item-container-footer'>
-	        	Check to use watch hands with a thinner width.
-		 </div>         
 
         <div class='item-container-content'>
              <label class='item'>
