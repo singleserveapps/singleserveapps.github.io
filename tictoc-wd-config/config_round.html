@@ -29,6 +29,11 @@
 				Minute hand
 				<input id='minuteHandColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
 			</label>
+
+			<label class='item'>
+				Seconds hand
+				<input id='secondsHandColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>			
 			
 			<label class='item'>
 				Hour markers
@@ -183,7 +188,18 @@
 		</div>
 		<div class='item-container-footer'>
 	        	Check to use watch hands with a thinner width.
-		 </div>		 
+		 </div>
+		 
+		<div class='item-container-content'>
+             <label class='item'>
+                Shake to display seconds hand
+                <input id='displaySecondsHand' type='checkbox' class='item-checkbox'>
+             </label>
+          </div>
+          <div class='item-container-footer'>
+              Check to enable shake option to briefly show a seconds hand. Seconds hand displays for just 15 seconds to save battery.
+         </div>	
+		 
 	</div>
 
     <div class='item-container'>
