@@ -27,6 +27,7 @@ function loadOptions() {
 	var $textColorPicker = $('#textColorPicker');
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $secondsHandColorPicker = $('#secondsHandColorPicker');
 	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
 	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
@@ -38,7 +39,6 @@ function loadOptions() {
 	var $displayDigitalTime = $('#displayDigitalTime');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
-	var $useThinHands = $('#useThinHands');	
 	var $displayBattery = $('#displayBattery');
 	var $displayHourDigits = $('#displayHourDigits');
 
@@ -47,6 +47,7 @@ function loadOptions() {
 		$textColorPicker[0].value = localStorage.textColor;
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
+		$secondsHandColorPicker[0].value = localStorage.secondsHandColor;
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
@@ -79,10 +80,6 @@ function loadOptions() {
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
-			
-		$useThinHands[0].checked = false;
-		if (localStorage.useThinHands == "1")
-			$useThinHands[0].checked = true;			
 
 		$displayBattery[0].checked = false;
 		if (localStorage.displayBattery == "1")
@@ -99,6 +96,7 @@ function getAndStoreConfigData() {
 	var $textColorPicker = $('#textColorPicker');
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $secondsHandColorPicker = $('#secondsHandColorPicker');
 	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
 	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
@@ -110,7 +108,6 @@ function getAndStoreConfigData() {
 	var $displayDigitalTime = $('#displayDigitalTime');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
-	var $useThinHands = $('#useThinHands');	
 	var $displayBattery = $('#displayBattery');
 	var $displayHourDigits = $('#displayHourDigits');
 	
@@ -121,7 +118,6 @@ function getAndStoreConfigData() {
 	var displayDigitalTime = 0;
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
-	var useThinHands = 0;	
 	var displayBattery = 0;
 	var displayHourDigits = 0;
 
@@ -145,9 +141,6 @@ function getAndStoreConfigData() {
 	
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
-		
-	if ($useThinHands[0].checked)
-		useThinHands = 1;		
 
 	if ($displayBattery[0].checked)
 		displayBattery = 1;
@@ -160,6 +153,7 @@ function getAndStoreConfigData() {
 		textColor: $textColorPicker.val(),
 		hourHandColor: $hourHandColorPicker.val(),
 		minuteHandColor: $minuteHandColorPicker.val(),
+		secondsHandColor: $secondsHandColorPicker.val(),
 		hourMarkersColor: $hourMarkersColorPicker.val(),
 		minorMarkersColor: $minorMarkersColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
@@ -171,7 +165,6 @@ function getAndStoreConfigData() {
 		displayDigitalTime: displayDigitalTime,
 		weatherDateDTimeReadability: weatherdatedtime_readability,
 		vibrateBT: vibrateBT,
-		useThinHands: useThinHands,		
 		displayBattery: displayBattery,
 		displayHourDigits: displayHourDigits
 	};
@@ -180,6 +173,7 @@ function getAndStoreConfigData() {
 	localStorage.textColor = options.textColor;
 	localStorage.hourHandColor = options.hourHandColor;
 	localStorage.minuteHandColor = options.minuteHandColor;
+	localStorage.secondsHandColor = options.secondsHandColor;
 	localStorage.hourMarkersColor = options.hourMarkersColor;
 	localStorage.minorMarkersColor = options.minorMarkersColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
@@ -191,7 +185,6 @@ function getAndStoreConfigData() {
 	localStorage.displayDigitalTime = options.displayDigitalTime;
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
-	localStorage.useThinHands = options.useThinHands;	
 	localStorage.displayBattery = options.displayBattery;
 	localStorage.displayHourDigits = options.displayHourDigits;
 
