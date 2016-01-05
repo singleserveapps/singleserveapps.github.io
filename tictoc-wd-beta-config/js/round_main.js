@@ -21,6 +21,7 @@ function loadOptions() {
 	var $dotsColorPicker = $('#dotsColorPicker');	
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $secondsHandColorPicker = $('#secondsHandColorPicker');	
 	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
 	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
@@ -36,7 +37,7 @@ function loadOptions() {
 	var $useThinHands = $('#useThinHands');
 	var $displayBattery = $('#displayBattery');
 	var $displayMinuteLines = $('#displayMinuteLines');
-	var $displayHourDigits = $('#displayHourDigits');	
+	var $displaySecondsHand = $('#displaySecondsHand');	
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -44,6 +45,7 @@ function loadOptions() {
 		$dotsColorPicker[0].value = localStorage.dotsColor;
 		$hourHandColorPicker[0].value = localStorage.hourHandColor;
 		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
+		$secondsHandColorPicker[0].value = localStorage.secondsHandColor;		
 		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
 		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
@@ -115,9 +117,9 @@ function loadOptions() {
 		if (localStorage.displayMinuteLines == "1")
 			$displayMinuteLines[0].checked = true;
 
-		$displayHourDigits[0].checked = false;
-		if (localStorage.displayHourDigits == "1")
-			$displayHourDigits[0].checked = true;				
+		$displaySecondsHand[0].checked = false;
+		if (localStorage.displaySecondsHand == "1")
+			$displaySecondsHand[0].checked = true;			
 	}
 }
 
@@ -127,6 +129,7 @@ function getAndStoreConfigData() {
 	var $dotsColorPicker = $('#dotsColorPicker');
 	var $hourHandColorPicker = $('#hourHandColorPicker');
 	var $minuteHandColorPicker = $('#minuteHandColorPicker');
+	var $secondsHandColorPicker = $('#secondsHandColorPicker');	
 	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
 	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
@@ -142,7 +145,7 @@ function getAndStoreConfigData() {
 	var $useThinHands = $('#useThinHands');
 	var $displayBattery = $('#displayBattery');
 	var $displayMinuteLines = $('#displayMinuteLines');
-	var $displayHourDigits = $('#displayHourDigits');	
+	var $displaySecondsHand = $('#displaySecondsHand');	
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -156,7 +159,7 @@ function getAndStoreConfigData() {
 	var useThinHands = 0;
 	var displayBattery = 0;
 	var displayMinuteLines = 0;
-	var displayHourDigits = 0;	
+	var displaySecondsHand = 0;	
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -191,15 +194,16 @@ function getAndStoreConfigData() {
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
 
-	if ($displayHourDigits[0].checked)
-		displayHourDigits = 1;	
-
+	if ($displaySecondsHand[0].checked)
+		displaySecondsHand = 1;		
+	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		textColor: $textColorPicker.val(),
 		dotsColor: $dotsColorPicker.val(),
 		hourHandColor: $hourHandColorPicker.val(),
 		minuteHandColor: $minuteHandColorPicker.val(),
+		secondsHandColor: $secondsHandColorPicker.val(),		
 		hourMarkersColor: $hourMarkersColorPicker.val(),
 		minorMarkersColor: $minorMarkersColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
@@ -215,7 +219,7 @@ function getAndStoreConfigData() {
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
 		displayMinuteLines: displayMinuteLines,
-		displayHourDigits: displayHourDigits		
+		displaySecondsHand: displaySecondsHand		
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
@@ -223,6 +227,7 @@ function getAndStoreConfigData() {
 	localStorage.dotsColor = options.dotsColor;	
 	localStorage.hourHandColor = options.hourHandColor;
 	localStorage.minuteHandColor = options.minuteHandColor;
+	localStorage.secondsHandColor = options.secondsHandColor;	
 	localStorage.hourMarkersColor = options.hourMarkersColor;
 	localStorage.minorMarkersColor = options.minorMarkersColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
@@ -238,7 +243,7 @@ function getAndStoreConfigData() {
 	localStorage.useThinHands = options.useThinHands;
 	localStorage.displayBattery = options.displayBattery;
 	localStorage.displayMinuteLines = options.displayMinuteLines;
-	localStorage.displayHourDigits = options.displayHourDigits;	
+	localStorage.displaySecondsHand = options.displaySecondsHand;	
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
