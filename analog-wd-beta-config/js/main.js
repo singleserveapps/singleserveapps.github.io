@@ -39,6 +39,7 @@ function loadOptions() {
 	var $displayDigitalTime = $('#displayDigitalTime');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
+	var $useThinHands = $('#useThinHands');	
 	var $displayBattery = $('#displayBattery');
 	var $displayHourDigits = $('#displayHourDigits');
 
@@ -80,6 +81,10 @@ function loadOptions() {
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
+			
+		$useThinHands[0].checked = false;
+		if (localStorage.useThinHands == "1")
+			$useThinHands[0].checked = true;			
 
 		$displayBattery[0].checked = false;
 		if (localStorage.displayBattery == "1")
@@ -108,6 +113,7 @@ function getAndStoreConfigData() {
 	var $displayDigitalTime = $('#displayDigitalTime');
 	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
 	var $vibrateBT = $('#vibrateBT');
+	var $useThinHands = $('#useThinHands');	
 	var $displayBattery = $('#displayBattery');
 	var $displayHourDigits = $('#displayHourDigits');
 	
@@ -118,6 +124,7 @@ function getAndStoreConfigData() {
 	var displayDigitalTime = 0;
 	var weatherdatedtime_readability = 0;
 	var vibrateBT = 0;
+	var useThinHands = 0;	
 	var displayBattery = 0;
 	var displayHourDigits = 0;
 
@@ -141,6 +148,9 @@ function getAndStoreConfigData() {
 	
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
+		
+	if ($useThinHands[0].checked)
+		useThinHands = 1;
 
 	if ($displayBattery[0].checked)
 		displayBattery = 1;
@@ -165,6 +175,7 @@ function getAndStoreConfigData() {
 		displayDigitalTime: displayDigitalTime,
 		weatherDateDTimeReadability: weatherdatedtime_readability,
 		vibrateBT: vibrateBT,
+		useThinHands: useThinHands,
 		displayBattery: displayBattery,
 		displayHourDigits: displayHourDigits
 	};
@@ -185,6 +196,7 @@ function getAndStoreConfigData() {
 	localStorage.displayDigitalTime = options.displayDigitalTime;
 	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
 	localStorage.vibrateBT = options.vibrateBT;
+	localStorage.useThinHands = options.useThinHands;
 	localStorage.displayBattery = options.displayBattery;
 	localStorage.displayHourDigits = options.displayHourDigits;
 
