@@ -105,6 +105,7 @@ function getAndStoreConfigData() {
 	var shake_for_LoHi = 0;
 	var use_Celsius = 0;
 	var display_Prefix = 0;
+	var display_Date = 0;	
 	var invert_Colors = 0;
 	var hourminutes_readability = 0;
 	var weatherdate_readability = 0;
