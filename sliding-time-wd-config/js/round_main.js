@@ -16,13 +16,15 @@ function submitHandler() {
 
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $textColorPicker = $('#textColorPicker');
+	var $timeColorPicker = $('#timeColorPicker');
+	var $wdColorPicker = $('#wdColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
+	var $displayDate = $('#displayDate');
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 	var $hourMinutesReadability = $('#hourMinutesReadability');
 	var $weatherDateReadability = $('#weatherDateReadability');
@@ -30,7 +32,8 @@ function loadOptions() {
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
-		$textColorPicker[0].value = localStorage.textColor;
+		$timeColorPicker[0].value = localStorage.timeColor;
+		$wdColorPicker[0].value = localStorage.wdColor;		
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$hourMinutesAlignment.val("0");
 		$hourMinutesAlignment.val(localStorage.hourMinutesAlignment);
@@ -47,6 +50,7 @@ function loadOptions() {
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
 			$useGPS[0].checked = true;
+
 		$shakeforLoHi[0].checked = false;
 		if (localStorage.shakeforLoHi == "1")
 			$shakeforLoHi[0].checked = true;
@@ -58,6 +62,10 @@ function loadOptions() {
 		$displayPrefix[0].checked = false;
 		if (localStorage.displayPrefix == "1")
 			$displayPrefix[0].checked = true;
+
+		$displayDate[0].checked = false;
+		if (localStorage.displayDate == "1")
+			$displayDate[0].checked = true;
 		
 		$hourMinutesReadability[0].checked = false;
 		if (localStorage.hourMinutesReadability == "1")
@@ -66,6 +74,7 @@ function loadOptions() {
 		$weatherDateReadability[0].checked = false;
 		if (localStorage.weatherDateReadability == "1")
 			$weatherDateReadability[0].checked = true;
+		
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
@@ -74,13 +83,15 @@ function loadOptions() {
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $textColorPicker = $('#textColorPicker');
+	var $timeColorPicker = $('#timeColorPicker');
+	var $wdColorPicker = $('#wdColorPicker');	
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $displayPrefix = $('#displayPrefix');
+	var $displayDate = $('#displayDate');	
 	var $hourMinutesAlignment = $('#hourMinutesAlignment');
 	var $hourMinutesReadability = $('#hourMinutesReadability');
 	var $weatherDateReadability = $('#weatherDateReadability');
@@ -90,6 +101,7 @@ function getAndStoreConfigData() {
 	var shake_for_LoHi = 0;
 	var use_Celsius = 0;
 	var display_Prefix = 0;
+	var display_Date = 0;	
 	var invert_Colors = 0;
 	var hourminutes_readability = 0;
 	var weatherdate_readability = 0;
@@ -99,11 +111,15 @@ function getAndStoreConfigData() {
 	
 	if ($shakeforLoHi[0].checked)
 		shake_for_LoHi = 1;
+
 	if ($useCelsius[0].checked)
 		use_Celsius = 1;
 
 	if ($displayPrefix[0].checked)
 		display_Prefix = 1;
+
+	if ($displayDate[0].checked)
+		display_Date = 1;
 	
 	if ($hourMinutesReadability[0].checked)
 		hourminutes_readability = 1;
@@ -113,16 +129,18 @@ function getAndStoreConfigData() {
 
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
-	
+		
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
-		textColor: $textColorPicker.val(),
+		timeColor: $timeColorPicker.val(),
+		wdColor: $wdColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
         displayPrefix: display_Prefix,
+        displayDate: display_Date,
         weatherDateAlignment: 1,
         hourMinutesAlignment: $hourMinutesAlignment.val(),
 		hourMinutesReadability: hourminutes_readability,
@@ -131,13 +149,15 @@ function getAndStoreConfigData() {
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
-	localStorage.textColor = options.textColor;
+	localStorage.timeColor = options.timeColor;
+	localStorage.wdColor = options.wdColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayPrefix = options.displayPrefix;
+	localStorage.displayDate = options.displayDate;	
 	localStorage.hourMinutesAlignment = options.hourMinutesAlignment;
 	localStorage.hourMinutesReadability = options.hourMinutesReadability;
 	localStorage.weatherDateReadability = options.weatherDateReadability;

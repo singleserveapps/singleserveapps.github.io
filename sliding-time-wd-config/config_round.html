@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +11,7 @@
   		<div class="item-container-header">Watchface alignment options</div>
 		<div class="item-container-content">
       		<label class="item">
-				Hour / Minutes Lines
+            		Hour / Minutes Lines
       			<select id="hourMinutesAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" selected value=0>Left</option>
         		<option class="item-select-option" value=1>Center</option>
@@ -34,12 +34,17 @@
 			</label>
 			
 			<label class='item'>
-				Text Color
-				<input id='textColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+				Time Color
+				<input id='timeColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+			</label>
+			
+			<label class='item'>
+				Weather/Date Color
+				<input id='wdColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
-		        Choose the background and text colors for the watchface. 
+		        Choose the background, time, and weather/date colors for the watchface. 
 		        (For Pebble and Pebble Steel, select from black & white colors only. Black is default for background color and white is default for text color.)
 		</div>
 	</div>	
@@ -47,7 +52,6 @@
 	<div class='item-container'>
 		<div class='item-container-header'>Weather options <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple_retina.png" width="134" height="29"/> </a>
 		</div>
-
 		<div class='item-container-content'>
 			<label class='item'>
 				Use GPS for weather
@@ -66,8 +70,7 @@
         </div>
         <div class='item-container-footer'>
 	        Enter location for non-GPS weather condition retrieval.
-		 </div>		
-		
+		 </div>
 		<div class='item-container-content'>
 			<label class='item'>
 				Shake for Lo/Hi Temperature
@@ -101,7 +104,18 @@
 	</div>
 	
 	    <div class='item-container'>
-		<div class='item-container-header'>Display options</div>		
+		<div class='item-container-header'>Display options</div>	
+		
+		<div class='item-container-content'>
+			<label class='item'>
+				Display date
+				<input id='displayDate' type='checkbox' class='item-checkbox'>
+			</label>
+		</div>
+		<div class='item-container-footer'>
+	        	Check to display current date information.
+		 </div>		
+			
 		<div class='item-container-content'>
 			<label class='item'>
 				Display "o" for 1-9
@@ -132,8 +146,7 @@
               Check to display weather & date lines using a larger font size. Relaunch watchface to apply display option.
          </div>
 	</div>
-	
-	<div class='item-container'>
+    <div class='item-container'>
 		<div class='item-container-header'>Additional options</div>		
 		<div class='item-container-content'>
 			<label class='item'>
