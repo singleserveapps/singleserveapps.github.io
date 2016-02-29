@@ -94,10 +94,9 @@ function loadOptions() {
 		$displayHourDigits[0].checked = false;
 		if (localStorage.displayHourDigits == "1")
 			$displayHourDigits[0].checked = true;
-			
-		$displaySecondsHand[0].checked = false;
-		if (localStorage.displaySecondsHand == "1")
-			$displaySecondsHand[0].checked = true;			
+	
+		$displaySecondsHand.val("1");
+		$displaySecondsHand.val(localStorage.displaySecondsHand);	
 	}
 }
 
@@ -133,7 +132,6 @@ function getAndStoreConfigData() {
 	var useThinHands = 0;	
 	var displayBattery = 0;
 	var displayHourDigits = 0;
-	var displaySecondsHand = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -164,9 +162,6 @@ function getAndStoreConfigData() {
 	
 	if ($displayHourDigits[0].checked)
 		displayHourDigits = 1;
-		
-	if ($displaySecondsHand[0].checked)
-		displaySecondsHand = 1;		
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -188,7 +183,7 @@ function getAndStoreConfigData() {
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
 		displayHourDigits: displayHourDigits,
-		displaySecondsHand: displaySecondsHand
+		displaySecondsHand: $displaySecondsHand.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
