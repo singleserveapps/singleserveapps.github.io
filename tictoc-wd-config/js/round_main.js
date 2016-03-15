@@ -195,7 +195,13 @@ function getAndStoreConfigData() {
 		displayMinuteLines = 1;
 
 	if ($displaySecondsHand[0].checked)
-		displaySecondsHand = 1;		
+		displaySecondsHand = 1;	
+
+	var weatherLocationVal = '';
+	if ($weatherLocation.val().length == 5)
+		weatherLocationVal = $weatherLocation.val() + ' US';
+	else
+		weatherLocationVal = $weatherLocation.val();		
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -206,7 +212,7 @@ function getAndStoreConfigData() {
 		secondsHandColor: $secondsHandColorPicker.val(),		
 		hourMarkersColor: $hourMarkersColorPicker.val(),
 		minorMarkersColor: $minorMarkersColorPicker.val(),
-		weatherFrequency: $weatherFrequencySlider.val(),
+		weatherFrequency: weatherLocationVal,
 		useGPS: useGPS,
 		weatherLocation: $weatherLocation.val(),
 		shakeforLoHi: shake_for_LoHi,
