@@ -199,7 +199,7 @@ function getAndStoreConfigData() {
 		displaySecondsHand = 1;
 		
 	if ($weatherLocation.val().length === 5)
-		weatherLocationVal = weatherLocation.val() + ' us';
+		weatherLocationVal = weatherLocation.val() + ' US';
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
