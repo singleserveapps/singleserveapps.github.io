@@ -133,6 +133,12 @@ function getAndStoreConfigData() {
 
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
+
+	var weatherLocationVal = '';
+	if ($weatherLocation.val().length == 5)
+		weatherLocationVal = $weatherLocation.val() + ' US';
+	else
+		weatherLocationVal = $weatherLocation.val();	
 		
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -140,7 +146,7 @@ function getAndStoreConfigData() {
 		wdColor: $wdColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
-		weatherLocation: $weatherLocation.val(),
+		weatherLocation: weatherLocationVal,
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
         displayPrefix: display_Prefix,
