@@ -238,7 +238,7 @@ function getAndStoreConfigData() {
 	localStorage.minorMarkersColor = options.minorMarkersColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
-	localStorage.weatherLocation = options.weatherLocation;
+	localStorage.weatherLocation = $weatherLocation.val();
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.displayDate = options.displayDate;
