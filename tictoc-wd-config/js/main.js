@@ -199,7 +199,7 @@ function getAndStoreConfigData() {
 		displaySecondsHand = 1;
 		
 	if ($weatherLocation.val().length == 5)
-		weatherLocationVal = weatherLocation.val() + ' US';
+		weatherLocationVal = $weatherLocation.val() + ' US';
 	else
 		weatherLocationVal = $weatherLocation.val();
 	
