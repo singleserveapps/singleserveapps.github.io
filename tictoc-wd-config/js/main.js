@@ -195,7 +195,10 @@ function getAndStoreConfigData() {
 		displayMinuteLines = 1;
 
 	if ($displaySecondsHand[0].checked)
-		displaySecondsHand = 1;		
+		displaySecondsHand = 1;
+		
+	if ($weatherLocation.val().length === 5)
+		$weatherLocation.val() = $weatherLocation.val() + ' us';
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
