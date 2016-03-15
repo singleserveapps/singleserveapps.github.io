@@ -159,7 +159,8 @@ function getAndStoreConfigData() {
 	var useThinHands = 0;
 	var displayBattery = 0;
 	var displayMinuteLines = 0;
-	var displaySecondsHand = 0;	
+	var displaySecondsHand = 0;
+	var weatherLocationVal = '';
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -198,7 +199,7 @@ function getAndStoreConfigData() {
 		displaySecondsHand = 1;
 		
 	if ($weatherLocation.val().length === 5)
-		$weatherLocation.val() = $weatherLocation.val() + ' us';
+		weatherLocationVal = weatherLocation.val() + ' us';
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
@@ -211,7 +212,7 @@ function getAndStoreConfigData() {
 		minorMarkersColor: $minorMarkersColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
-		weatherLocation: $weatherLocation.val(),
+		weatherLocation: weatherLocationVal,
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
 		displayDate: displayDate,
