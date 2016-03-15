@@ -200,6 +200,8 @@ function getAndStoreConfigData() {
 		
 	if ($weatherLocation.val().length === 5)
 		weatherLocationVal = weatherLocation.val() + ' US';
+	else
+		weatherLocationVal = weatherLocation.val();
 	
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
