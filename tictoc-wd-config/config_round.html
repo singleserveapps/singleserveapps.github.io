@@ -188,14 +188,21 @@
 	        	Check to use watch hands with a thinner width.
 		 </div>
 		 
-		<div class='item-container-content'>
-             <label class='item'>
-                Shake to display seconds hand
-                <input id='displaySecondsHand' type='checkbox' class='item-checkbox'>
-             </label>
+		<div class="item-container-content">
+		<label class="item">
+      			Display seconds hand
+      			<select id="displaySecondsHand" dir='rtl' class="item-select">
+        		<option class="item-select-option" value=0>Off</option>
+        		<option class="item-select-option" selected value=1>Shake</option>
+        		<option class="item-select-option" value=2>Always</option>
+      		</select>
+      	</label>
           </div>
           <div class='item-container-footer'>
-              Check to enable shake option to briefly show a seconds hand. Seconds hand displays for just 15 seconds to save battery.
+              Select to enable seconds hand - Off, Shake, or Always.
+         </div>	
+          <div class='item-container-footer'>
+              Shake option will briefly show a seconds hand. Seconds hand displays for just 15 seconds to save battery.
          </div>	
 		 
 	</div>

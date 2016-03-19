@@ -116,10 +116,9 @@ function loadOptions() {
 		$displayMinuteLines[0].checked = false;
 		if (localStorage.displayMinuteLines == "1")
 			$displayMinuteLines[0].checked = true;
-
-		$displaySecondsHand[0].checked = false;
-		if (localStorage.displaySecondsHand == "1")
-			$displaySecondsHand[0].checked = true;			
+			
+		$displaySecondsHand.val("1");
+		$displaySecondsHand.val(localStorage.displaySecondsHand);		
 	}
 }
 
@@ -159,7 +158,6 @@ function getAndStoreConfigData() {
 	var useThinHands = 0;
 	var displayBattery = 0;
 	var displayMinuteLines = 0;
-	var displaySecondsHand = 0;	
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -194,9 +192,6 @@ function getAndStoreConfigData() {
 	if ($displayMinuteLines[0].checked)
 		displayMinuteLines = 1;
 
-	if ($displaySecondsHand[0].checked)
-		displaySecondsHand = 1;	
-
 	var weatherLocationVal = '';
 	if ($weatherLocation.val().length == 5)
 		weatherLocationVal = $weatherLocation.val() + ' US';
@@ -225,7 +220,7 @@ function getAndStoreConfigData() {
 		useThinHands: useThinHands,
 		displayBattery: displayBattery,
 		displayMinuteLines: displayMinuteLines,
-		displaySecondsHand: displaySecondsHand		
+		displaySecondsHand: $displaySecondsHand.val()		
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
