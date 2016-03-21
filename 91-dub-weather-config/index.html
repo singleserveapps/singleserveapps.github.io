@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -7,54 +7,6 @@
 	<link rel='stylesheet' type='text/css' href='/91-dub-weather-config/css/style.css'>
 </head>
 <body>
-	<div class='item-container'>
-		<div class='item-container-header'>Watchface color options</div>
-		<div class='item-container-content'>
-			<label class='item'>
-				Background
-				<input id='backgroundColorPicker' type='text' class='item-color item-color-normal' value='#000000'>
-			</label>
-			
-			<label class='item'>
-				Text
-				<input id='textColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
-			</label>
-			
-			<label class='item'>
-				Hour hand
-				<input id='hourHandColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
-			</label>
-			
-			<label class='item'>
-				Minute hand
-				<input id='minuteHandColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
-			</label>
-
-			<label class='item'>
-				Seconds hand
-				<input id='secondsHandColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
-			</label>
-			
-			<label class='item'>
-				Hour markers
-				<input id='hourMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xff0000'>
-			</label>
-			
-			<label class='item'>
-				Minor markers
-				<input id='minorMarkersColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
-			</label>
-			
-			<label class='item'>
-				Twelve o'clock marker
-				<input id='dotsColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
-			</label>
-		</div>
-		<div class='item-container-footer'>
-		        Choose the background, text, hour/minute hands, and time markers colors for the watchface. 
-		</div>
-	</div>	
-	
 	<div class='item-container'>
 		<div class='item-container-header'>Weather options</div>
 		<div class='item-container-content'>
@@ -111,99 +63,61 @@
 	</div>
 	
 	<div class='item-container'>
-		<div class='item-container-header'>Date options</div>		
-		<div class='item-container-content'>
-			<label class='item'>
-				Display date
-				<input id='displayDate' type='checkbox' class='item-checkbox'>
-			</label>
-		</div>
-		<div class='item-container-footer'>
-	        	Check to display current date information.
-		 </div>
-
-        <div class='item-container-content'>
-            <label class='item'>
-                Include month with date
-                <input id='displayMonth' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to include current month with date information.
-        </div>
-	</div>
-		
-	<div class='item-container'>
-	<div class='item-container-header'>Dial markers option</div>
-        <div class='item-container-content'>
-            <label class='item'>
-                Display minute indicators
-                <input id='displayMinuteLines' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display line markers at minute positions on the dial. Also toggles display of dot marker in twelve o'clock position.
-        </div>
-	</div>
-	
-	<div class='item-container'>
 	<div class='item-container-header'>Display options</div>
-		<div class='item-container-content'>
-            <label class='item'>
-                Display battery information
-                <input id='displayBattery' type='checkbox' class='item-checkbox'>
+
+        <div class="item-container-content">
+            <label class="item">
+                Blink
+                <select id="blinkColon" dir='rtl' class="item-select">
+                    <option class="item-select-option" value=0>Off</option>
+                    <option class="item-select-option" selected value=1>On</option>
+                    <option class="item-select-option" value=2>Double</option>
+                </select>
             </label>
         </div>
         <div class='item-container-footer'>
-            Check to display current battery charge level information.
+            Select to blink the colon between the hours and minutes with every second.
         </div>
 
         <div class='item-container-content'>
             <label class='item'>
-                Display digital time
-                <input id='displayDigitalTime' type='checkbox' class='item-checkbox'>
+                Hourly Vibrate
+                <input id='hourlyVibrate' type='checkbox' class='item-checkbox'>
             </label>
         </div>
         <div class='item-container-footer'>
-            Check to display current time in digital format.
+            Check to vibrate on the hour.
         </div>
 
         <div class='item-container-content'>
              <label class='item'>
-                Use larger font for text elements
-                <input id='weatherDateDTimeReadability' type='checkbox' class='item-checkbox'>
+                Hide Battery Level
+                <input id='hideBatteryLevel' type='checkbox' class='item-checkbox'>
              </label>
           </div>
           <div class='item-container-footer'>
-              Check to display weather, date, digital time and battery items using a larger font size.
+              Check to hide the battery icon and percentage on the watchface.
          </div>
 		 
         <div class='item-container-content'>
 			<label class='item'>
-				Use thinner watch hands
-				<input id='useThinHands' type='checkbox' class='item-checkbox'>
+				Show Seconds
+				<input id='showSeconds' type='checkbox' class='item-checkbox'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
-	        	Check to use watch hands with a thinner width.
+	        	Check to show seconds on the watchface.
 		 </div>
 
-		<div class="item-container-content">
-		<label class="item">
-      			Display seconds hand
-      			<select id="displaySecondsHand" dir='rtl' class="item-select">
-        		<option class="item-select-option" value=0>Off</option>
-        		<option class="item-select-option" selected value=1>Shake</option>
-        		<option class="item-select-option" value=2>Always</option>
-      		</select>
-      	</label>
-          </div>
-          <div class='item-container-footer'>
-              Select to enable seconds hand - Off, Shake, or Always.
-         </div>	
-          <div class='item-container-footer'>
-              Shake option will briefly show a seconds hand. Seconds hand displays for just 15 seconds to save battery.
-         </div>	
+        <div class='item-container-content'>
+            <label class='item'>
+                Use larger font for weather elements
+                <input id='weatherReadability' type='checkbox' class='item-checkbox'>
+            </label>
+        </div>
+        <div class='item-container-footer'>
+            Check to display weather text items using a larger font size.
+        </div>
 
 	</div>
 
