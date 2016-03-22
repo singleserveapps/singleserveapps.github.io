@@ -28,61 +28,59 @@ function loadOptions() {
 	var $weatherReadability = $('#weatherReadability');
 	var $vibrateBT = $('#vibrateBT');
 
-	if (localStorage.weatherFrequencySlider) {
-		$useGPS.val("0");
-		$useGPS.val(localStorage.useGPS);
-		$weatherLocation.val(localStorage.weatherLocation);
-		$shakeforLoHi.val("0");
-		$shakeforLoHi.val(localStorage.shakeforLoHi);
-		$useCelsius.val("0");
-		$useCelsius.val(localStorage.useCelsius);
-		$weatherFrequencySlider.val(localStorage.weatherFrequency);
-		$hourlyVibrate.val("0");
-		$hourlyVibrate.val(localStorage.hourlyVibrate);
-		$hideBattery.val("0");
-		$hideBattery.val(localStorage.hideBattery);
-		$displaySeconds.val("0");
-		$displaySeconds.val(localStorage.displaySeconds);
-		$weatherReadability.val("0");
-		$weatherReadability.val(localStorage.weatherReadability);
-		$vibrateBT.val("0");
-		$vibrateBT.val(localStorage.vibrateBT);
+	$useGPS.val("0");
+	$useGPS.val(localStorage.useGPS);
+	$weatherLocation.val(localStorage.weatherLocation);
+	$shakeforLoHi.val("0");
+	$shakeforLoHi.val(localStorage.shakeforLoHi);
+	$useCelsius.val("0");
+	$useCelsius.val(localStorage.useCelsius);
+	$weatherFrequencySlider.val(localStorage.weatherFrequency);
+	$hourlyVibrate.val("0");
+	$hourlyVibrate.val(localStorage.hourlyVibrate);
+	$hideBattery.val("0");
+	$hideBattery.val(localStorage.hideBattery);
+	$displaySeconds.val("0");
+	$displaySeconds.val(localStorage.displaySeconds);
+	$weatherReadability.val("0");
+	$weatherReadability.val(localStorage.weatherReadability);
+	$vibrateBT.val("0");
+	$vibrateBT.val(localStorage.vibrateBT);
 
-		$useGPS[0].checked = false;
-		if (localStorage.useGPS == "1")
-			$useGPS[0].checked = true;
-		
-		$shakeforLoHi[0].checked = false;
-		if (localStorage.shakeforLoHi == "1")
-			$shakeforLoHi[0].checked = true;
-		
-		$useCelsius[0].checked = false;
-		if (localStorage.useCelsius == "1")
-			$useCelsius[0].checked = true;
-		
-		$blinkColon.val("1");
-		$blinkColon.val(localStorage.blinkColon);
+	$useGPS[0].checked = false;
+	if (localStorage.useGPS == "1")
+		$useGPS[0].checked = true;
+	
+	$shakeforLoHi[0].checked = false;
+	if (localStorage.shakeforLoHi == "1")
+		$shakeforLoHi[0].checked = true;
+	
+	$useCelsius[0].checked = false;
+	if (localStorage.useCelsius == "1")
+		$useCelsius[0].checked = true;
+	
+	$blinkColon.val("1");
+	$blinkColon.val(localStorage.blinkColon);
 
-		$hourlyVibrate[0].checked = false;
-		if (localStorage.hourlyVibrate == "1")
-			$hourlyVibrate[0].checked = true;
+	$hourlyVibrate[0].checked = false;
+	if (localStorage.hourlyVibrate == "1")
+		$hourlyVibrate[0].checked = true;
 
-		$hideBattery[0].checked = false;
-		if (localStorage.hideBattery == "1")
-			$hideBattery[0].checked = true;
+	$hideBattery[0].checked = false;
+	if (localStorage.hideBattery == "1")
+		$hideBattery[0].checked = true;
+	
+	$displaySeconds[0].checked = false;
+	if (localStorage.displaySeconds == "1")
+		$displaySeconds[0].checked = true;
+
+	$weatherReadability[0].checked = false;
+	if (localStorage.weatherReadability == "1")
+		$weatherReadability[0].checked = true;			
 		
-		$displaySeconds[0].checked = false;
-		if (localStorage.displaySeconds == "1")
-			$displaySeconds[0].checked = true;
-
-		$weatherReadability[0].checked = false;
-		if (localStorage.weatherReadability == "1")
-			$weatherReadability[0].checked = true;			
-			
-		$vibrateBT[0].checked = false;
-		if (localStorage.vibrateBT == "1")
-			$vibrateBT[0].checked = true;
-	}
+	$vibrateBT[0].checked = false;
+	if (localStorage.vibrateBT == "1")
+		$vibrateBT[0].checked = true;
 }
 
 function getAndStoreConfigData() {
