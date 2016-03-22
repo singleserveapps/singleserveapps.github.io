@@ -16,39 +16,19 @@ function submitHandler() {
 
 
 function loadOptions() {
-	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $textColorPicker = $('#textColorPicker');
-	var $dotsColorPicker = $('#dotsColorPicker');	
-	var $hourHandColorPicker = $('#hourHandColorPicker');
-	var $minuteHandColorPicker = $('#minuteHandColorPicker');
-	var $secondsHandColorPicker = $('#secondsHandColorPicker');	
-	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
-	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
-	var $displayDate = $('#displayDate');
-	var $displayMonth = $('#displayMonth');
-	var $displayDigitalTime = $('#displayDigitalTime');
-	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $blinkColon = $('#blinkColon');
+	var $hourlyVibrate = $('#hourlyVibrate');
+	var $hideBattery = $('#hideBattery');
+	var $displaySeconds = $('#displaySeconds');
+	var $weatherReadability = $('#weatherReadability');
 	var $vibrateBT = $('#vibrateBT');
-	var $useThinHands = $('#useThinHands');
-	var $displayBattery = $('#displayBattery');
-	var $displayMinuteLines = $('#displayMinuteLines');
-	var $displaySecondsHand = $('#displaySecondsHand');	
 
-	if (localStorage.backgroundColor) {
-		$backgroundColorPicker[0].value = localStorage.backgroundColor;
-		$textColorPicker[0].value = localStorage.textColor;
-		$dotsColorPicker[0].value = localStorage.dotsColor;
-		$hourHandColorPicker[0].value = localStorage.hourHandColor;
-		$minuteHandColorPicker[0].value = localStorage.minuteHandColor;
-		$secondsHandColorPicker[0].value = localStorage.secondsHandColor;		
-		$hourMarkersColorPicker[0].value = localStorage.hourMarkersColor;
-		$minorMarkersColorPicker[0].value = localStorage.minorMarkersColor;
-		$weatherFrequencySlider.val(localStorage.weatherFrequency);
+	if (localStorage.weatherFrequencySlider) {
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
 		$weatherLocation.val(localStorage.weatherLocation);
@@ -56,22 +36,17 @@ function loadOptions() {
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
 		$useCelsius.val("0");
 		$useCelsius.val(localStorage.useCelsius);
-		$displayDate.val("0");
-		$displayDate.val(localStorage.displayDate);
-		$displayMonth.val("0");
-		$displayMonth.val(localStorage.displayMonth);
-		$displayDigitalTime.val("0");
-		$displayDigitalTime.val(localStorage.displayDigitalTime);
-		$weatherDateDTimeReadability.val("0");
-		$weatherDateDTimeReadability.val(localStorage.weatherDateDTimeReadability);
+		$weatherFrequencySlider.val(localStorage.weatherFrequency);
+		$hourlyVibrate.val("0");
+		$hourlyVibrate.val(localStorage.hourlyVibrate);
+		$hideBattery.val("0");
+		$hideBattery.val(localStorage.hideBattery);
+		$displaySeconds.val("0");
+		$displaySeconds.val(localStorage.displaySeconds);
+		$weatherReadability.val("0");
+		$weatherReadability.val(localStorage.weatherReadability);
 		$vibrateBT.val("0");
 		$vibrateBT.val(localStorage.vibrateBT);
-		$useThinHands.val("0");
-		$useThinHands.val(localStorage.useThinHands);
-		$displayBattery.val("0");
-		$displayBattery.val(localStorage.displayBattery);
-		$displayMinuteLines.val("0");
-		$displayMinuteLines.val(localStorage.displayMinuteLines);
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
@@ -85,112 +60,76 @@ function loadOptions() {
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
 		
-		$displayDate[0].checked = false;
-		if (localStorage.displayDate == "1")
-			$displayDate[0].checked = true;
+		$blinkColon.val("1");
+		$blinkColon.val(localStorage.blinkColon);
+
+		$hourlyVibrate[0].checked = false;
+		if (localStorage.hourlyVibrate == "1")
+			$hourlyVibrate[0].checked = true;
+
+		$hideBattery[0].checked = false;
+		if (localStorage.hideBattery == "1")
+			$hideBattery[0].checked = true;
 		
-		$displayMonth[0].checked = false;
-		if (localStorage.displayMonth == "1")
-			$displayMonth[0].checked = true;
-		
-		$displayDigitalTime[0].checked = false;
-		if (localStorage.displayDigitalTime == "1")
-			$displayDigitalTime[0].checked = true;
-		
-		$weatherDateDTimeReadability[0].checked = false;
-		if (localStorage.weatherDateDTimeReadability == "1")
-			$weatherDateDTimeReadability[0].checked = true;			
+		$displaySeconds[0].checked = false;
+		if (localStorage.displaySeconds == "1")
+			$displaySeconds[0].checked = true;
+
+		$weatherReadability[0].checked = false;
+		if (localStorage.weatherReadability == "1")
+			$weatherReadability[0].checked = true;			
 			
 		$vibrateBT[0].checked = false;
 		if (localStorage.vibrateBT == "1")
 			$vibrateBT[0].checked = true;
-		
-		$useThinHands[0].checked = false;
-		if (localStorage.useThinHands == "1")
-			$useThinHands[0].checked = true;
-		
-		$displayBattery[0].checked = false;
-		if (localStorage.displayBattery == "1")
-			$displayBattery[0].checked = true;
-
-		$displayMinuteLines[0].checked = false;
-		if (localStorage.displayMinuteLines == "1")
-			$displayMinuteLines[0].checked = true;
-
-		$displaySecondsHand.val("1");
-		$displaySecondsHand.val(localStorage.displaySecondsHand);		
 	}
 }
 
 function getAndStoreConfigData() {
-	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $textColorPicker = $('#textColorPicker');
-	var $dotsColorPicker = $('#dotsColorPicker');
-	var $hourHandColorPicker = $('#hourHandColorPicker');
-	var $minuteHandColorPicker = $('#minuteHandColorPicker');
-	var $secondsHandColorPicker = $('#secondsHandColorPicker');	
-	var $hourMarkersColorPicker = $('#hourMarkersColorPicker');
-	var $minorMarkersColorPicker = $('#minorMarkersColorPicker');
-	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
-	var $displayDate = $('#displayDate');
-	var $displayMonth = $('#displayMonth');
-	var $displayDigitalTime = $('#displayDigitalTime');
-	var $weatherDateDTimeReadability = $('#weatherDateDTimeReadability');
+	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $blinkColon = $('#blinkColon');
+	var $hourlyVibrate = $('#hourlyVibrate');
+	var $hideBattery = $('#hideBattery');
+	var $displaySeconds = $('#displaySeconds');
+	var $weatherReadability = $('#weatherReadability');
 	var $vibrateBT = $('#vibrateBT');
-	var $useThinHands = $('#useThinHands');
-	var $displayBattery = $('#displayBattery');
-	var $displayMinuteLines = $('#displayMinuteLines');
-	var $displaySecondsHand = $('#displaySecondsHand');	
-	
+
 	var useGPS = 0;
-	var shake_for_LoHi = 0;
-	var use_Celsius = 0;
-	var invert_Colors = 0;
-	var displayDate = 0;
-	var displayMonth = 0;
-	var displayDigitalTime = 0;
-	var weatherdatedtime_readability = 0;
+	var shakeforLoHi = 0;
+	var useCelsius = 0;
+	var hourlyVibrate = 0;
+	var hideBattery = 0;
+	var displaySeconds = 0;
+	var weatherReadability = 0;
 	var vibrateBT = 0;
-	var useThinHands = 0;
-	var displayBattery = 0;
-	var displayMinuteLines = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
 	
 	if ($shakeforLoHi[0].checked)
-		shake_for_LoHi = 1;
+		shakeforLoHi = 1;
 
 	if ($useCelsius[0].checked)
-		use_Celsius = 1;
+		useCelsius = 1;
 	
-	if ($displayDate[0].checked)
-		displayDate = 1;
+	if ($hourlyVibrate[0].checked)
+		hourlyVibrate = 1;	
 	
-	if ($displayMonth[0].checked)
-		displayMonth = 1;
+	if ($hideBattery[0].checked)
+		hideBattery = 1;	
+	
+	if ($displaySeconds[0].checked)
+		displaySeconds = 1;	
 
-	if ($displayDigitalTime[0].checked)
-		displayDigitalTime = 1;
-
-	if ($weatherDateDTimeReadability[0].checked)
-		weatherdatedtime_readability = 1;
+	if ($weatherReadability[0].checked)
+		weatherReadability = 1;
 	
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
-
-	if ($useThinHands[0].checked)
-		useThinHands = 1;
-
-	if ($displayBattery[0].checked)
-		displayBattery = 1;
-	
-	if ($displayMinuteLines[0].checked)
-		displayMinuteLines = 1;
 
 	var weatherLocationVal = '';
 	if ($weatherLocation.val().length == 5)
@@ -199,20 +138,30 @@ function getAndStoreConfigData() {
 		weatherLocationVal = $weatherLocation.val();
 	
 	var options = {
-		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: weatherLocationVal,
-		shakeforLoHi: shake_for_LoHi,
-		useCelsius: use_Celsius,
-		weatherDateDTimeReadability: weatherdatedtime_readability
+		shakeforLoHi: shakeforLoHi,
+		useCelsius: useCelsius,
+		weatherFrequency: $weatherFrequencySlider.val(),
+		blinkColon: $blinkColon.val(),
+		hourlyVibrate: hourlyVibrate,
+		hideBattery: hideBattery,
+		displaySeconds, displaySeconds,
+		weatherReadability: weatherReadability,
+		vibrateBT: vibrateBT
 	};
-
-	localStorage.weatherFrequency = options.weatherFrequency;
+	
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
-	localStorage.weatherDateDTimeReadability = options.weatherDateDTimeReadability;
+	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.blinkColon = options.blinkColon;
+	localStorage.hourlyVibrate = options.hourlyVibrate;
+	localStorage.hideBattery = options.hideBattery;
+	localStorage.displaySeconds = options.displaySeconds;
+	localStorage.weatherReadability = options.weatherReadability;
+	localStorage.vibrateBT = options.vibrateBT;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
