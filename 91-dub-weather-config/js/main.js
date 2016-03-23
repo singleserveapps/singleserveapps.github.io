@@ -21,6 +21,7 @@ function loadOptions() {
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $invert = $('#invert');
 	var $blinkColon = $('#blinkColon');
 	var $hourlyVibrate = $('#hourlyVibrate');
 	var $hideBattery = $('#hideBattery');
@@ -36,6 +37,8 @@ function loadOptions() {
 	$useCelsius.val("0");
 	$useCelsius.val(localStorage.useCelsius);
 	$weatherFrequencySlider.val(localStorage.weatherFrequency);
+	$invert.val("0");
+	$invert.val(localStorage.invert);	
 	$blinkColon.val("0");
 	$blinkColon.val(localStorage.blinkColon);	
 	$hourlyVibrate.val("0");
@@ -60,6 +63,10 @@ function loadOptions() {
 	$useCelsius[0].checked = false;
 	if (localStorage.useCelsius == "1")
 		$useCelsius[0].checked = true;
+	
+	$invert[0].checked = false;
+	if (localStorage.invert == "1")
+		$invert[0].checked = true;
 	
 	$blinkColon[0].checked = false;
 	if (localStorage.blinkColon == "1")
@@ -92,6 +99,7 @@ function getAndStoreConfigData() {
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
+	var $invert = $('#invert');
 	var $blinkColon = $('#blinkColon');
 	var $hourlyVibrate = $('#hourlyVibrate');
 	var $hideBattery = $('#hideBattery');
@@ -103,6 +111,7 @@ function getAndStoreConfigData() {
 	var shakeforLoHi = 0;
 	var useCelsius = 0;
 	var hourlyVibrate = 0;
+	var invert = 0;
 	var blinkColon = 0;
 	var hideBattery = 0;
 	var displaySeconds = 0;
@@ -118,6 +127,9 @@ function getAndStoreConfigData() {
 	if ($useCelsius[0].checked)
 		useCelsius = 1;
 	
+	if ($invert[0].checked)
+		invert = 1;		
+
 	if ($blinkColon[0].checked)
 		blinkColon = 1;		
 	
@@ -148,6 +160,7 @@ function getAndStoreConfigData() {
 		shakeforLoHi: shakeforLoHi,
 		useCelsius: useCelsius,
 		weatherFrequency: $weatherFrequencySlider.val(),
+		invert: invert,
 		blinkColon: blinkColon,
 		hourlyVibrate: hourlyVibrate,
 		hideBattery: hideBattery,
@@ -161,6 +174,7 @@ function getAndStoreConfigData() {
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
 	localStorage.weatherFrequency = options.weatherFrequency;
+	localStorage.invert = options.invert;
 	localStorage.blinkColon = options.blinkColon;
 	localStorage.hourlyVibrate = options.hourlyVibrate;
 	localStorage.hideBattery = options.hideBattery;
