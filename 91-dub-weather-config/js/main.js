@@ -24,7 +24,7 @@ function loadOptions() {
 	var $invert = $('#invert');
 	var $blinkColon = $('#blinkColon');
 	var $hourlyVibrate = $('#hourlyVibrate');
-	var $hideBattery = $('#hideBattery');
+	//var $hideBattery = $('#hideBattery');
 	var $displaySeconds = $('#displaySeconds');
 	var $weatherReadability = $('#weatherReadability');
 	var $vibrateBT = $('#vibrateBT');
@@ -43,8 +43,8 @@ function loadOptions() {
 	$blinkColon.val(localStorage.blinkColon);	
 	$hourlyVibrate.val("0");
 	$hourlyVibrate.val(localStorage.hourlyVibrate);
-	$hideBattery.val("0");
-	$hideBattery.val(localStorage.hideBattery);
+	//$hideBattery.val("0");
+	//$hideBattery.val(localStorage.hideBattery);
 	$displaySeconds.val("0");
 	$displaySeconds.val(localStorage.displaySeconds);
 	$weatherReadability.val("0");
@@ -76,9 +76,9 @@ function loadOptions() {
 	if (localStorage.hourlyVibrate == "1")
 		$hourlyVibrate[0].checked = true;
 
-	$hideBattery[0].checked = false;
-	if (localStorage.hideBattery == "1")
-		$hideBattery[0].checked = true;
+	//$hideBattery[0].checked = false;
+	//if (localStorage.hideBattery == "1")
+	//	$hideBattery[0].checked = true;
 	
 	$displaySeconds[0].checked = false;
 	if (localStorage.displaySeconds == "1")
@@ -102,7 +102,7 @@ function getAndStoreConfigData() {
 	var $invert = $('#invert');
 	var $blinkColon = $('#blinkColon');
 	var $hourlyVibrate = $('#hourlyVibrate');
-	var $hideBattery = $('#hideBattery');
+	//var $hideBattery = $('#hideBattery');
 	var $displaySeconds = $('#displaySeconds');
 	var $weatherReadability = $('#weatherReadability');
 	var $vibrateBT = $('#vibrateBT');
@@ -136,8 +136,8 @@ function getAndStoreConfigData() {
 	if ($hourlyVibrate[0].checked)
 		hourlyVibrate = 1;	
 	
-	if ($hideBattery[0].checked)
-		hideBattery = 1;	
+	//if ($hideBattery[0].checked)
+		//hideBattery = 1;
 	
 	if ($displaySeconds[0].checked)
 		displaySeconds = 1;	
