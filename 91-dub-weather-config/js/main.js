@@ -36,6 +36,8 @@ function loadOptions() {
 	$useCelsius.val("0");
 	$useCelsius.val(localStorage.useCelsius);
 	$weatherFrequencySlider.val(localStorage.weatherFrequency);
+	$blinkColon.val("0");
+	$blinkColon.val(localStorage.blinkColon);	
 	$hourlyVibrate.val("0");
 	$hourlyVibrate.val(localStorage.hourlyVibrate);
 	$hideBattery.val("0");
@@ -59,9 +61,10 @@ function loadOptions() {
 	if (localStorage.useCelsius == "1")
 		$useCelsius[0].checked = true;
 	
-	$blinkColon.val("1");
-	$blinkColon.val(localStorage.blinkColon);
-
+	$blinkColon[0].checked = false;
+	if (localStorage.blinkColon == "1")
+		$blinkColon[0].checked = true;
+	
 	$hourlyVibrate[0].checked = false;
 	if (localStorage.hourlyVibrate == "1")
 		$hourlyVibrate[0].checked = true;
@@ -100,6 +103,7 @@ function getAndStoreConfigData() {
 	var shakeforLoHi = 0;
 	var useCelsius = 0;
 	var hourlyVibrate = 0;
+	var blinkColon = 0;
 	var hideBattery = 0;
 	var displaySeconds = 0;
 	var weatherReadability = 0;
@@ -113,6 +117,9 @@ function getAndStoreConfigData() {
 
 	if ($useCelsius[0].checked)
 		useCelsius = 1;
+	
+	if ($blinkColon[0].checked)
+		blinkColon = 1;		
 	
 	if ($hourlyVibrate[0].checked)
 		hourlyVibrate = 1;	
@@ -141,7 +148,7 @@ function getAndStoreConfigData() {
 		shakeforLoHi: shakeforLoHi,
 		useCelsius: useCelsius,
 		weatherFrequency: $weatherFrequencySlider.val(),
-		blinkColon: $blinkColon.val(),
+		blinkColon: blinkColon,
 		hourlyVibrate: hourlyVibrate,
 		hideBattery: hideBattery,
 		displaySeconds, displaySeconds,
