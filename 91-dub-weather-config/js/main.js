@@ -164,7 +164,7 @@ function getAndStoreConfigData() {
 		blinkColon: blinkColon,
 		hourlyVibrate: hourlyVibrate,
 		hideBattery: hideBattery,
-		displaySeconds, displaySeconds,
+		displaySeconds: displaySeconds,
 		weatherReadability: weatherReadability,
 		vibrateBT: vibrateBT
 	};
