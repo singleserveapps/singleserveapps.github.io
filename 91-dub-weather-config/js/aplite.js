@@ -22,7 +22,7 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $invert = $('#invert');
-	var $blinkColon = $('#blinkColon');
+	//var $blinkColon = $('#blinkColon');
 	var $hourlyVibrate = $('#hourlyVibrate');
 	//var $hideBattery = $('#hideBattery');
 	var $displaySeconds = $('#displaySeconds');
@@ -39,8 +39,8 @@ function loadOptions() {
 	$weatherFrequencySlider.val(localStorage.weatherFrequency);
 	$invert.val("0");
 	$invert.val(localStorage.invert);	
-	$blinkColon.val("0");
-	$blinkColon.val(localStorage.blinkColon);	
+	//$blinkColon.val("0");
+	//$blinkColon.val(localStorage.blinkColon);	
 	$hourlyVibrate.val("0");
 	$hourlyVibrate.val(localStorage.hourlyVibrate);
 	//$hideBattery.val("0");
@@ -68,9 +68,9 @@ function loadOptions() {
 	if (localStorage.invert == "1")
 		$invert[0].checked = true;
 	
-	$blinkColon[0].checked = false;
-	if (localStorage.blinkColon == "1")
-		$blinkColon[0].checked = true;
+	//$blinkColon[0].checked = false;
+	//if (localStorage.blinkColon == "1")
+	//	$blinkColon[0].checked = true;
 	
 	$hourlyVibrate[0].checked = false;
 	if (localStorage.hourlyVibrate == "1")
@@ -100,7 +100,7 @@ function getAndStoreConfigData() {
 	var $useCelsius = $('#useCelsius');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $invert = $('#invert');
-	var $blinkColon = $('#blinkColon');
+	//var $blinkColon = $('#blinkColon');
 	var $hourlyVibrate = $('#hourlyVibrate');
 	//var $hideBattery = $('#hideBattery');
 	//var $displaySeconds = $('#displaySeconds');
@@ -130,8 +130,8 @@ function getAndStoreConfigData() {
 	if ($invert[0].checked)
 		invert = 1;		
 
-	if ($blinkColon[0].checked)
-		blinkColon = 1;		
+	//if ($blinkColon[0].checked)
+	//	blinkColon = 1;		
 	
 	if ($hourlyVibrate[0].checked)
 		hourlyVibrate = 1;	
