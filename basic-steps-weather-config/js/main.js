@@ -16,6 +16,10 @@ function submitHandler() {
 
 
 function loadOptions() {
+	var $backgroundColorPicker = $('#backgroundColorPicker');
+	var $hrColorPicker = $('#hrColorPicker');
+	var $minColorPicker = $('#minColorPicker');	
+	var $wsdColorPicker = $('#wsdColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -23,6 +27,10 @@ function loadOptions() {
 	var $useCelsius = $('#useCelsius');
 
 	if (localStorage.backgroundColor) {
+		$backgroundColorPicker[0].value = localStorage.backgroundColor;
+		$hrColorPicker[0].value = localStorage.hrColor;		
+		$minColorPicker[0].value = localStorage.minColor;
+		$wsdColorPicker[0].value = localStorage.wsdColor;
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$useGPS.val("0");
 		$useGPS.val(localStorage.useGPS);
@@ -47,6 +55,10 @@ function loadOptions() {
 }
 
 function getAndStoreConfigData() {
+	var $backgroundColorPicker = $('#backgroundColorPicker');
+	var $hrColorPicker = $('#hrColorPicker');
+	var $minColorPicker = $('#minColorPicker');
+	var $wsdColorPicker = $('#wsdColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
 	var $weatherLocation = $('#weatherLocation');
@@ -74,6 +86,10 @@ function getAndStoreConfigData() {
 		weatherLocationVal = $weatherLocation.val();
 	
 	var options = {
+		backgroundColor: $backgroundColorPicker.val(),
+		hrColor: $hrColorPicker.val(),		
+		minColor: $minColorPicker.val(),
+		wsdColor: $wsdColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
 		weatherLocation: weatherLocationVal,
@@ -82,6 +98,10 @@ function getAndStoreConfigData() {
 		displayDigitalTime: displayDigitalTime
 	};
 
+	localStorage.backgroundColor = options.backgroundColor;
+	localStorage.hrColor = options.hrColor;
+	localStorage.minColor = options.minColor;
+	localStorage.wsdColor = options.wsdColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
 	localStorage.weatherLocation = options.weatherLocation;
