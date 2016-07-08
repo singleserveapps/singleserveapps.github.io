@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +11,7 @@
   		<div class="item-container-header">Watchface alignment options</div>
 		<div class="item-container-content">
       		<label class="item">
-            		Hour / Minutes Lines
+            		Hour/Minutes Lines
       			<select id="hourMinutesAlignment" dir='rtl' class="item-select">
         		<option class="item-select-option" selected value=0>Left</option>
         		<option class="item-select-option" value=1>Center</option>
@@ -34,13 +34,18 @@
 			</label>
 			
 			<label class='item'>
-				Time Color
-				<input id='timeColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+				Hour Color
+				<input id='hrColorPicker' type='text' class='item-color item-color-normal' value='#ffffff'>
 			</label>
+
+            <label class='item'>
+                Minutes Color
+                <input id='minColorPicker' type='text' class='item-color item-color-normal' value='#ffffff'>
+            </label>
 			
 			<label class='item'>
 				Weather/Date Color
-				<input id='wdColorPicker' type='text' class='item-color item-color-normal' value='0xffffff'>
+				<input id='wdColorPicker' type='text' class='item-color item-color-normal' value='#ffffff'>
 			</label>
 		</div>
 		<div class='item-container-footer'>
@@ -50,8 +55,7 @@
 	</div>	
 	
 	<div class='item-container'>
-		<div class='item-container-header'>Weather options <a href="https://www.yahoo.com/?ilc=401" target="_blank"> <img src="https://poweredby.yahoo.com/purple_retina.png" width="134" height="29"/> </a>
-		</div>
+		<div class='item-container-header'>Weather options</div>
 		<div class='item-container-content'>
 			<label class='item'>
 				Use GPS for weather
@@ -63,13 +67,14 @@
 		 </div>
         <div class="item-container-content">
             <label class="item">
-            Weather location
+				Weather location
+			</label>
             <div class="item-input-wrapper">
                 <input type="text" class="item-input" id="weatherLocation" placeholder="e.g. 'San Diego CA US', or '92103 US'">
             </div>
         </div>
         <div class='item-container-footer'>
-	        Enter location for non-GPS weather condition retrieval.
+	        Enter location for non-GPS weather condition retrieval, e.g. 'San Diego CA US', or '92103 US'
 		 </div>
 		<div class='item-container-content'>
 			<label class='item'>
@@ -166,6 +171,6 @@
 	</div>
 
 	<script src='/sliding-time-beta-config/bower_components/pebble-slate/dist/js/slate.min.js'></script>
-	<script src='/sliding-time-beta-config/js/main.js'></script>
+	<script src='/sliding-time-beta-config/js/round_main.js'></script>
 </body>
 </html>

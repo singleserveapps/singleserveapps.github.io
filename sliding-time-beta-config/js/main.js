@@ -16,7 +16,8 @@ function submitHandler() {
 
 function loadOptions() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $timeColorPicker = $('#timeColorPicker');
+	var $hrColorPicker = $('#hrColorPicker');
+	var $minColorPicker = $('#minColorPicker');
 	var $wdColorPicker = $('#wdColorPicker');
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
@@ -33,7 +34,8 @@ function loadOptions() {
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
-		$timeColorPicker[0].value = localStorage.timeColor;
+		$hrColorPicker[0].value = localStorage.hrColor;
+		$minColorPicker[0].value = localStorage.minColor;
 		$wdColorPicker[0].value = localStorage.wdColor;		
 		$weatherFrequencySlider.val(localStorage.weatherFrequency);
 		$weatherDateAlignment.val("1");
@@ -86,7 +88,8 @@ function loadOptions() {
 
 function getAndStoreConfigData() {
 	var $backgroundColorPicker = $('#backgroundColorPicker');
-	var $timeColorPicker = $('#timeColorPicker');
+	var $hrColorPicker = $('#hrColorPicker');
+	var $minColorPicker = $('#minColorPicker');
 	var $wdColorPicker = $('#wdColorPicker');	
 	var $weatherFrequencySlider = $('#weatherFrequencySlider');
 	var $useGPS = $('#useGPS');
@@ -133,14 +136,21 @@ function getAndStoreConfigData() {
 
 	if ($vibrateBT[0].checked)
 		vibrateBT = 1;
+
+	var weatherLocationVal = '';
+	if ($weatherLocation.val().length == 5)
+		weatherLocationVal = $weatherLocation.val() + ' US';
+	else
+		weatherLocationVal = $weatherLocation.val();	
 		
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
-		timeColor: $timeColorPicker.val(),
+		hrColor: $hrColorPicker.val(),
+		minColor: $minColorPicker.val(),
 		wdColor: $wdColorPicker.val(),
 		weatherFrequency: $weatherFrequencySlider.val(),
 		useGPS: useGPS,
-		weatherLocation: $weatherLocation.val(),
+		weatherLocation: weatherLocationVal,
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
         displayPrefix: display_Prefix,
@@ -153,7 +163,8 @@ function getAndStoreConfigData() {
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
-	localStorage.timeColor = options.timeColor;
+	localStorage.hrColor = options.hrColor;
+	localStorage.minColor = options.minColor;
 	localStorage.wdColor = options.wdColor;
 	localStorage.weatherFrequency = options.weatherFrequency;
 	localStorage.useGPS = options.useGPS;
