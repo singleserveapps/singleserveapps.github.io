@@ -25,8 +25,8 @@ function loadOptions() {
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
-	var $useBoldFontHr = $('#useBoldFontHr');
-	var $useBoldFontMin = $('#useBoldFontMin');
+	var $hourFont = $('#hourFont');
+	var $minutesFont = $('#minutesFont');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -41,10 +41,6 @@ function loadOptions() {
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
 		$useCelsius.val("0");
 		$useCelsius.val(localStorage.useCelsius);
-		$useBoldFontHr.val("0");
-		$useBoldFontHr.val(localStorage.useBoldFontHr);
-		$useBoldFontMin.val("0");
-		$useBoldFontMin.val(localStorage.useBoldFontMin);		
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
@@ -58,13 +54,11 @@ function loadOptions() {
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
 		
-		$useBoldFontHr[0].checked = false;
-		if (localStorage.useBoldFontHr == "1")
-			$useBoldFontHr[0].checked = true;
-
-		$useBoldFontMin[0].checked = false;
-		if (localStorage.useBoldFontMin == "1")
-			$useBoldFontMin[0].checked = true;				
+		$hourFont.val("1");
+		$hourFont.val(localStorage.hourFont);
+		
+		$minutesFont.val("1");
+		$minutesFont.val(localStorage.minutesFont);		
 	}
 }
 
@@ -78,15 +72,13 @@ function getAndStoreConfigData() {
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
-	var $useBoldFontHr = $('#useBoldFontHr');
-	var $useBoldFontMin = $('#useBoldFontMin');		
+	var $hourFont = $('#hourFont');
+	var $minutesFont = $('#minutesFont');		
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
 	var use_Celsius = 0;
 	var displayDigitalTime = 0;
-	var useBoldFontHr = 0;
-	var useBoldFontMin = 0;
 
 	if ($useGPS[0].checked)
 		useGPS = 1;
@@ -96,12 +88,6 @@ function getAndStoreConfigData() {
 
 	if ($useCelsius[0].checked)
 		use_Celsius = 1;
-	
-	if ($useBoldFontHr[0].checked)
-		useBoldFontHr = 1;
-
-	if ($useBoldFontMin[0].checked)
-		useBoldFontMin = 1;	
 
 	var weatherLocationVal = '';
 	if ($weatherLocation.val().length == 5)
@@ -119,8 +105,8 @@ function getAndStoreConfigData() {
 		weatherLocation: weatherLocationVal,
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
-		useBoldFontHr: useBoldFontHr,
-		useBoldFontMin: useBoldFontMin,			
+		hourFont: $hourFont.val(),
+		minutesFont: $minutesFont.val(),		
 		displayDigitalTime: displayDigitalTime
 	};
 
@@ -133,8 +119,8 @@ function getAndStoreConfigData() {
 	localStorage.weatherLocation = options.weatherLocation;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
-	localStorage.useBoldFontHr = options.useBoldFontHr;
-	localStorage.useBoldFontMin = options.useBoldFontMin;		
+	localStorage.hourFont = options.hourFont;
+	localStorage.minutesFont = options.minutesFont;		
 	localStorage.displayDigitalTime = options.displayDigitalTime;
 
 	console.log('Got options: ' + JSON.stringify(options));

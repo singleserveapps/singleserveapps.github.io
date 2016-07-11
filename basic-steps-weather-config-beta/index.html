@@ -95,35 +95,40 @@
 
     <div class='item-container'>
         <div class='item-container-header'>Display options</div>
+		
+		<div class="item-container-content">
+		<label class="item">
+      			Hour font
+      			<select id="hourFont" dir='rtl' class="item-select">
+        		<option class="item-select-option" value=0>Thin</option>
+        		<option class="item-select-option" selected value=1>Regular</option>
+        		<option class="item-select-option" value=2>Bold</option>
+      			</select>
+      	</label>
+          </div>
+          <div class='item-container-footer'>
+              Select font width for hour digits - thin, regular, or bold. Relaunch watchface to apply display option.
+         </div>			
 
-        <div class='item-container-content'>
-            <label class='item'>
-                Bold font for Hour
-                <input id='useBoldFontHr' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display hour information using a bold font -- requires relaunch.
-        </div>
-
-        <div class='item-container-content'>
-            <label class='item'>
-                Bold font for Minutes
-                <input id='useBoldFontMin' type='checkbox' class='item-checkbox'>
-            </label>
-        </div>
-        <div class='item-container-footer'>
-            Check to display minutes information using a bold font -- requires relaunch.
-        </div>
+		<div class="item-container-content">
+		<label class="item">
+      			Minutes font
+      			<select id="minutesFont" dir='rtl' class="item-select">
+        		<option class="item-select-option" value=0>Thin</option>
+        		<option class="item-select-option" selected value=1>Regular</option>
+        		<option class="item-select-option" value=2>Bold</option>
+      			</select>
+      	</label>
+          </div>
+          <div class='item-container-footer'>
+              Select font width for minutes digits - thin, regular, or bold. Relaunch watchface to apply display option.
+         </div>
     </div>
 
     <div class='item-container'>
         <div class='button-container'>
             <input id='submitButton' type='button' class='item-button' value='Save'>
         </div>
-		<div class='item-container-footer'>
-			Note: Some elements require that the watchface is relaunched to properly update. 
-		 </div>		
     </div>
 
 	<script src='/basic-steps-weather-config-beta/bower_components/pebble-slate/dist/js/slate.min.js'></script>
