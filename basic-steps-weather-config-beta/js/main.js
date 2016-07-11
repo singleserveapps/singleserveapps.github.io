@@ -41,10 +41,6 @@ function loadOptions() {
 		$shakeforLoHi.val(localStorage.shakeforLoHi);
 		$useCelsius.val("0");
 		$useCelsius.val(localStorage.useCelsius);
-		$hourFont.val("0");
-		$hourFont.val(localStorage.hourFont);
-		$minutesFont.val("0");
-		$minutesFont.val(localStorage.minutesFont);		
 
 		$useGPS[0].checked = false;
 		if (localStorage.useGPS == "1")
