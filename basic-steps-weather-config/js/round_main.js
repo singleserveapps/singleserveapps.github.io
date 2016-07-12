@@ -25,6 +25,8 @@ function loadOptions() {
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
+	var $hourFont = $('#hourFont');
+	var $minutesFont = $('#minutesFont');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
@@ -51,6 +53,12 @@ function loadOptions() {
 		$useCelsius[0].checked = false;
 		if (localStorage.useCelsius == "1")
 			$useCelsius[0].checked = true;
+		
+		$hourFont.val("1");
+		$hourFont.val(localStorage.hourFont);
+		
+		$minutesFont.val("1");
+		$minutesFont.val(localStorage.minutesFont);		
 	}
 }
 
@@ -64,6 +72,8 @@ function getAndStoreConfigData() {
 	var $weatherLocation = $('#weatherLocation');
 	var $shakeforLoHi = $('#shakeforLoHi');
 	var $useCelsius = $('#useCelsius');
+	var $hourFont = $('#hourFont');
+	var $minutesFont = $('#minutesFont');		
 	
 	var useGPS = 0;
 	var shake_for_LoHi = 0;
@@ -95,6 +105,8 @@ function getAndStoreConfigData() {
 		weatherLocation: weatherLocationVal,
 		shakeforLoHi: shake_for_LoHi,
 		useCelsius: use_Celsius,
+		hourFont: $hourFont.val(),
+		minutesFont: $minutesFont.val(),		
 		displayDigitalTime: displayDigitalTime
 	};
 
@@ -107,6 +119,8 @@ function getAndStoreConfigData() {
 	localStorage.weatherLocation = options.weatherLocation;
 	localStorage.shakeforLoHi = options.shakeforLoHi;
 	localStorage.useCelsius = options.useCelsius;
+	localStorage.hourFont = options.hourFont;
+	localStorage.minutesFont = options.minutesFont;		
 	localStorage.displayDigitalTime = options.displayDigitalTime;
 
 	console.log('Got options: ' + JSON.stringify(options));
