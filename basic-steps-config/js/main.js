@@ -19,12 +19,20 @@ function loadOptions() {
 	var $hrColorPicker = $('#hrColorPicker');
 	var $minColorPicker = $('#minColorPicker');	
 	var $wsdColorPicker = $('#wsdColorPicker');
+	var $hourFont = $('#hourFont');
+	var $minutesFont = $('#minutesFont');
 
 	if (localStorage.backgroundColor) {
 		$backgroundColorPicker[0].value = localStorage.backgroundColor;
 		$hrColorPicker[0].value = localStorage.hrColor;		
 		$minColorPicker[0].value = localStorage.minColor;
 		$wsdColorPicker[0].value = localStorage.wsdColor;
+		
+		$hourFont.val("1");
+		$hourFont.val(localStorage.hourFont);	
+		
+		$minutesFont.val("1");
+		$minutesFont.val(localStorage.minutesFont);	
 	}
 }
 
@@ -33,18 +41,24 @@ function getAndStoreConfigData() {
 	var $hrColorPicker = $('#hrColorPicker');
 	var $minColorPicker = $('#minColorPicker');
 	var $wsdColorPicker = $('#wsdColorPicker');
+	var $hourFont = $('#hourFont');
+	var $minutesFont = $('#minutesFont');
 
 	var options = {
 		backgroundColor: $backgroundColorPicker.val(),
 		hrColor: $hrColorPicker.val(),		
 		minColor: $minColorPicker.val(),
 		wsdColor: $wsdColorPicker.val(),
+		hourFont: $hourFont.val(),
+		minutesFont: $minutesFont.val()
 	};
 
 	localStorage.backgroundColor = options.backgroundColor;
 	localStorage.hrColor = options.hrColor;
 	localStorage.minColor = options.minColor;
 	localStorage.wsdColor = options.wsdColor;
+	localStorage.hourFont = options.hourFont;
+	localStorage.minutesFont = options.minutesFont;
 
 	console.log('Got options: ' + JSON.stringify(options));
 	return options;
